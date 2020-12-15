@@ -41,12 +41,12 @@ class SignIn extends Component {
                     name="username" 
                     type="text" placeholder="Username" required /> 
                 <br /><br />
-                <label htmlFor="pwd">
+                <label htmlFor="password">
                     Password:
                 </label>
                 <Input 
-                    id="pwd" 
-                    name="pwd" 
+                    id="password" 
+                    name="password" 
                     type="password" placeholder="Password" required />
                 <br /><br />
                 <Button type="submit" >
