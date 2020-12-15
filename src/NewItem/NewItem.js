@@ -9,12 +9,13 @@ import Select from 'react-select';
 class NewItem extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
-        const {title, image, season, catagory} = event.target
+        const {title, image, season, catagory, favorite} = event.target
         const newItem = {
             title: title.value,
             image: image.value,
             season: season.value,
-            catagory: catagory.value
+            catagory: catagory.value,
+            favorite: favorite.value
         }
         this.setState({
             ...newItem
@@ -40,7 +41,7 @@ class NewItem extends Component {
                     New Item
                 </h1>
             <section>
-                <form action="upload.php" method="post" encType="multipart/form-data" id="signup" onSubmit={this.handleSubmit}>
+                <form action="upload.php" method="post" encType="multipart/form-data" id="register" onSubmit={this.handleSubmit}>
 
                 <button onClick={this.showWidget}> Upload Image </button>
                 <br /><br />

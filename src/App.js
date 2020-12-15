@@ -4,14 +4,16 @@ import RenderError from './RenderError';
 import {ApiContext }from './ApiContext';
 import './App.css';
 import LandingPage from './LandingPage/LandingPage';
-import SignUp from './SignUp/SignUp';
+import Register from './Register/Register';
 import SignIn from './SignIn/SignIn';
 import MyCloset from './MyCloset/MyCloset';
 import MyProfile from './MyProfile/MyProfile';
 import NewItem from './NewItem/NewItem';
 import MyItem from './MyItem/MyItem';
 import EditUser from './EditUser/EditUser';
-
+import PrivateRoute from './Utils/PrivateRoute';
+import PublicOnlyRoute from './Utils/PublicOnlyRoute';
+import Header from './Header/Header';
 class App extends Component {
   // state = {
   //   items: [
@@ -21,7 +23,7 @@ class App extends Component {
   //       title: 'Maroon Shirt',
   //       image: 'https://res.cloudinary.com/francescalitterio/image/upload/v1607381580/maroon-shirt_knqzwj.jpg',
   //       season: 'fall',
-  //       size: 'medium',
+  //       : 'medium',
   //       category: 'tops, t-shirts',
   //       favorite: true,
   //     },
@@ -80,7 +82,7 @@ class App extends Component {
     return(
       <>
       <Link to="/">Home</Link>
-      <Link to="/sign-up">Sign Up </Link>
+      <Link to="/register">Register</Link>
       <Link to="/sign-in">Sign In </Link>
       <Link to="/my-closet"> My Closet </Link>
       <Link to="/my-profile"> My Profile </Link>
@@ -95,13 +97,13 @@ class App extends Component {
       exact
       path="/"
         component={LandingPage}/>
-    <Route path="/sign-up" component={SignUp} />
-    <Route path="/sign-in" component={SignIn} />
-    <Route path="/my-closet" component={MyCloset} />
-    <Route path="/my-profile" component={MyProfile}/>
-    <Route path="/new-item" component={NewItem}/>
-    <Route path="/item/:itemId" component={MyItem}/>
-    <Route path="/edit-user/:userId" component={EditUser} />
+    <PublicOnlyRoute path="/register" component={Register} />
+    <PublicOnlyRoute path="/sign-in" component={SignIn} />
+    <PrivateRoute path="/my-closet" component={MyCloset} />
+    <PrivateRoute path="/my-profile" component={MyProfile}/>
+    <PrivateRoute path="/new-item" component={NewItem}/>
+    <PrivateRoute path="/item/:itemId" component={MyItem}/>
+    <PrivateRoute path="/edit-user/:userId" component={EditUser} />
     </>
     );
   }
@@ -116,6 +118,7 @@ class App extends Component {
     return(
     
         <div className="App">
+          <Header />
           <RenderError>
             <nav className="App_nav">{this.renderNavRoutes()}</nav>
           </RenderError>

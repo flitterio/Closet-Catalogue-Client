@@ -22,7 +22,7 @@ render(){
     <div className="landingpage_content">
          <section>
             <h2>How it works</h2>
-            <p>Imagine online shopping, but with everything you already own. With Closet Catalogue, users create a full catalogue of their closet items for easy browsing. Give your items titles, upload images, categorize them by style, size, and season. Scroll down to check out a sample catalogue and add an item of your own. </p>
+            <p>Imagine online shopping, but with everything you already own. With Closet Catalogue, users create a full catalogue of their closet items for easy browsing. Give your items titles, upload images, categorize them by style, and season. Scroll down to check out a sample catalogue and add an item of your own. </p>
         </section>
         <br />
         <article id="sample catalogue">

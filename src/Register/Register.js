@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 
-class SignUp extends Component {
+class Register extends Component {
     render(){
         return(
-        <div className="sign up"> 
+        <div className="register"> 
                 <h1>
                     New User
                 </h1>
 
             <section>
-                <form id="signUp">
+                <form id="register">
                     <label htmlFor="first-name">
                         First Name 
                     </label>
@@ -48,4 +48,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+export default Register;
