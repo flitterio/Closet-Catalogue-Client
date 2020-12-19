@@ -1,13 +1,26 @@
 import React, {Component} from 'react';
 import TokenService from '../services/token-service';
+import AuthApiService from '../services/auth-api-service';
 import {Button, Input } from '../Utils/Utils';
 
+
 class SignIn extends Component {
-    static defaultProps= {
-        onSigninSuccess: () => {}
-    }
+    static defaultProps = {
+        location: {},
+        history: {
+          push: () => {},
+        },
+      }
 
     state= {error: null }
+
+    handleSigninSuccess = () => {
+        console.log('redirecting...')
+        const { location, history } = this.props
+        const destination = (location.state || {})
+        .from || '/my-closet'
+        history.push(destination)
+      }
 
     handleSubmitBasicAuth = ev => {
         ev.preventDefault()
@@ -19,8 +32,29 @@ class SignIn extends Component {
 
         username.value = ''
         password.value =''
-        this.props.onSigninSuccess()
+        this.handleSigninSuccess()
     }
+
+    handleSubmitJwtAuth = ev => {
+           ev.preventDefault()
+           console.log('logging in')
+           this.setState({ error: null })
+           const { username, password } = ev.target
+        
+           AuthApiService.postSignin({
+             username: username.value,
+             password: password.value,
+           })
+             .then(res => {
+               username.value = ''
+               password.value = ''
+               TokenService.saveAuthToken(res.authToken)
+               this.handleSigninSuccess()
+             })
+             .catch(res => {
+               this.setState({ error: res.error })
+             })
+         }
 
     render(){
         const {error } = this.state
@@ -28,7 +62,7 @@ class SignIn extends Component {
             <div className="signIn">
                 <h1> Login </h1>
             <form id="login"
-                onSubmit={this.handleSubmitBasicAuth}>
+               onSubmit={this.handleSubmitJwtAuth}>
                     <div role='alert'>
                         {error && <p className='red'>{error}</p>}
                     </div>

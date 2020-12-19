@@ -6,7 +6,7 @@ import TokenService from '../services/token-service'
     getItem(itemId) {
       return fetch(`${config.API_ENDPOINT}/items/${itemId}`, {
           headers: {
-              'authorization': `basic ${TokenService.getAuthToken()}`,
+              'authorization': `bearer ${TokenService.getAuthToken()}`,
           },
       })
       .then(res =>
@@ -19,7 +19,7 @@ import TokenService from '../services/token-service'
    getUserItems() {
       return fetch(`${config.API_ENDPOINT}/items/${userId}`, {
       headers: {
-                'authorization': `basic ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
                },
   })
   .then(res =>
@@ -34,7 +34,7 @@ import TokenService from '../services/token-service'
           method: 'POST',
           headers: {
               'content-type': 'application/json',
-              'authorization': `basic ${TokenService.getAuthToken()}`,
+              'authorization': `bearer ${TokenService.getAuthToken()}`,
           },
           body: JSON.stringify({
                 itemId: itemId,
