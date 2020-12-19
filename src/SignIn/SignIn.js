@@ -15,6 +15,7 @@ class SignIn extends Component {
     state= {error: null }
 
     handleSigninSuccess = () => {
+        console.log('redirecting...')
         const { location, history } = this.props
         const destination = (location.state || {})
         .from || '/my-closet'
@@ -31,11 +32,12 @@ class SignIn extends Component {
 
         username.value = ''
         password.value =''
-        this.props.handleSigninSuccess()
+        this.handleSigninSuccess()
     }
 
     handleSubmitJwtAuth = ev => {
            ev.preventDefault()
+           console.log('logging in')
            this.setState({ error: null })
            const { username, password } = ev.target
         
@@ -47,7 +49,7 @@ class SignIn extends Component {
                username.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
-               this.props.handleSigninSuccess()
+               this.handleSigninSuccess()
              })
              .catch(res => {
                this.setState({ error: res.error })
