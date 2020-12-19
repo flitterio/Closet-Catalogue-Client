@@ -5,11 +5,21 @@ import {Button, Input } from '../Utils/Utils';
 
 
 class SignIn extends Component {
-    static defaultProps= {
-        onSigninSuccess: () => {}
-    }
+    static defaultProps = {
+        location: {},
+        history: {
+          push: () => {},
+        },
+      }
 
     state= {error: null }
+
+    handleSigninSuccess = () => {
+        const { location, history } = this.props
+        const destination = (location.state || {})
+        .from || '/my-closet'
+        history.push(destination)
+      }
 
     handleSubmitBasicAuth = ev => {
         ev.preventDefault()
@@ -21,7 +31,7 @@ class SignIn extends Component {
 
         username.value = ''
         password.value =''
-        this.props.onSigninSuccess()
+        this.props.handleSigninSuccess()
     }
 
     handleSubmitJwtAuth = ev => {
@@ -37,7 +47,7 @@ class SignIn extends Component {
                username.value = ''
                password.value = ''
                TokenService.saveAuthToken(res.authToken)
-               this.props.onSigninSuccess()
+               this.props.handleSigninSuccess()
              })
              .catch(res => {
                this.setState({ error: res.error })
