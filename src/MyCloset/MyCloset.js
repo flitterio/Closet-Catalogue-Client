@@ -36,7 +36,9 @@ class MyCloset extends Component {
         })
          .then(responseJson => {
             console.log('responsejson', responseJson)
-            this.setState({items: responseJson})
+            const items = responseJson
+            updateContextState(items)
+            //this.setState({items: responseJson})
          })
         //console.log('res.json',res.json())
     

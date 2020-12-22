@@ -55,6 +55,10 @@ class App extends Component {
   //   });
   // }
 
+  updateContextState = (items) => {
+    this.setState({items: items})
+  }
+
   renderNavRoutes(){
     return(
       <>
@@ -88,6 +92,7 @@ class App extends Component {
   render(){
     const value = {
       items: this.state.items,
+      updateContextState: this.updateContextState()
     };
     //   deleteItem: this.handleDeleteItem,
     //   deleteUser: this.handleDeleteUser
