@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {ApiContext} from '../ApiContext';
+import ApiContext from '../ApiContext';
 import './MyProfile.css';
 import User from '../User/User';
 import {getUser} from '../user-helpers';

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link } from 'react-router-dom'
-import {ApiContext} from '../ApiContext';
+import ApiContext from '../ApiContext';
 import './LandingPage.css'
 import NewItemButton from '../NewItemButton/NewItemButton';
 import {getClosetItems} from '../items-helpers';
@@ -13,10 +13,13 @@ static defaultProps ={
     }
 }
 static contextType = ApiContext;
+
+
 render(){
-    const userId = 1;
-    const {items=[]} = this.context;
-    const closetItems = getClosetItems(items, userId);
+    const userId = 1
+    const {items=[]} = this.context
+    const closetItems = getClosetItems(items, userId)
+    console.log(items)
 
     return(
     <div className="landingpage_content">

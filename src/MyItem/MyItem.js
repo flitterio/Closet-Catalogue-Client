@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './MyItem.css'
-import {ApiContext} from '../ApiContext'
+import ApiContext from '../ApiContext'
 import { findItem } from '../items-helpers'
 
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Link} from 'react-router-dom';
 import RenderError from './RenderError';
-import {ApiContext }from './ApiContext';
+import ApiContext from './ApiContext';
 import './App.css';
 import LandingPage from './LandingPage/LandingPage';
 import Register from './Register/Register';
@@ -14,69 +14,43 @@ import EditUser from './EditUser/EditUser';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import Header from './Header/Header';
+import config from './config';
+
+
 class App extends Component {
   // state = {
-  //   items: [
-  //     {
-  //       id: 1,
-  //       userId: 1,
-  //       title: 'Maroon Shirt',
-  //       image: 'https://res.cloudinary.com/francescalitterio/image/upload/v1607381580/maroon-shirt_knqzwj.jpg',
-  //       season: 'fall',
-  //       : 'medium',
-  //       category: 'tops, t-shirts',
-  //       favorite: true,
-  //     },
-  //     {
-  //       id: 2,
-  //       userId: 1,
-  //       title: 'Boyfriend Jeans',
-  //       image: './images/boyfriend-jeans.jpg',
-  //       season: 'fall, spring',
-  //       size: '8',
-  //       category: 'pants, jeans',
-  //       favorite: true,
-  //     },
-  //     {
-  //       id: 3,
-  //       userId: 1,
-  //       title: 'Gray Beanie',
-  //       image: ' ',
-  //       season: 'winter',
-  //       size: ' ',
-  //       category: 'accessories, hats',
-  //       favorite: false,
-  //     },
-  //   ],
-
-  //   users: [
-  //     {
-  //       id: 1,
-  //       fname: 'Example',
-  //       lname: 'User',
-  //       email: "exampleuser@example.com",
-  //       username: "exampleuser",
-  //       password: 'password'
-  //   },
-
-  //     {
-  //       id: 123,
-  //       fname: 'Francesca',
-  //       lname: 'Litterio',
-  //       email: 'francesca@litterio.net',
-  //       username: 'flitterio',
-  //       password: 'Abc123!',
-
-  //     },
-  //   ]
+  //   items: [],
+  //   user: {},
   // };
 
-  componentDidMount(){
-    //GET request to /items/userId
-    // localhost/items/userID => data
-    //set context with array of items for user id=1
+  // componentDidMount(){
+  //   //GET request to /items/userId
+  //   // localhost/items/userID => data
+  //   //set context with array of items for user id=1
 
-  }
+  //   fetch(`${config.API_ENDPOINT}/items`, {
+  //     method:'GET',
+  //     headers: {
+  //       'content-type '
+  //     }
+  //   })
+
+  //   .then(([itemsRes, usersRes]) => {
+  //     if(!itemsRes.ok)
+  //     return itemsRes.json().then(e => 
+  //     reject(e));
+
+  //     return itemsRes.json();
+  //   })
+
+  //   .then(([items, users]) => {
+  //     this.setState({items, users})
+  //   })
+
+  //   .catch(error =>{
+  //     console.error({error});
+  //   });
+  // }
 
   renderNavRoutes(){
     return(
@@ -111,12 +85,13 @@ class App extends Component {
   render(){
     // const value = {
     //   items: this.state.items,
-    //   users: this.state.users,
+    //   user: this.state.user,
+    // };
     //   deleteItem: this.handleDeleteItem,
     //   deleteUser: this.handleDeleteUser
     // };
     return(
-    
+     
         <div className="App">
           <Header />
           <RenderError>

@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import {ApiContext} from '../ApiContext';
+import ApiContext from '../ApiContext';
 import './EditUser.css';
 import propTypes from 'prop-types';
 

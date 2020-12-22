@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Item.css'
-import {ApiContext }from '../ApiContext'
+import ApiContext from '../ApiContext'
 
 export default class Item extends React.Component{
     static defaultProps ={

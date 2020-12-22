@@ -1,3 +1,6 @@
+//NEED TO IMPLEMENT THE POST TO API, NEED TO FIX BEARER TOKEN
+
+
 import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import Proptypes from 'prop-types';
@@ -7,20 +10,57 @@ import Select from 'react-select';
 
 
 class NewItem extends Component {
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const {title, image, season, catagory, favorite} = event.target
-        const newItem = {
-            title: title.value,
-            image: image.value,
-            season: season.value,
-            catagory: catagory.value,
-            favorite: favorite.value
-        }
-        this.setState({
-            ...newItem
-        })
-    }
+    // static propTypes = {
+    //     history: PropTypes.shape({
+    //       push: PropTypes.func,
+    //     }).isRequired,
+    //   };
+    //   static contextType = ApiContext;
+      
+    //   state ={
+    //       error: null,
+    //   };
+
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const {title, image, season, catagory, favorite} = event.target
+    //     const newItem = {
+    //         title: title.value,
+    //         image: image.value,
+    //         season: season.value,
+    //         catagory: catagory.value,
+    //         favorite: favorite.value,
+    //         //userid: userid.value???
+    //     }
+    //     this.setState({ error: null })
+    //     fetch(config.API_ENDPOINT, {
+    //         method: 'POST',
+    //         body: JSON.stringify(newItem),
+    //         headers:{
+    //             'content-type': 'application/json',
+    //             'Authorization': `Bearer ${config.TOKEN_KEY}`
+    //         }
+    //     })
+    //     .then(res => {
+    //         if (!res.ok) {
+    //           return res.json().then(error => Promise.reject(error))
+    //           }
+    //         return res.json()
+    //       })
+    //       .then(data => {
+    //         title.value = ''
+    //         image.value =''
+    //         season.value = ''
+    //         catagory.value =''
+    //          favorite.value =''
+    //         //userid.value=''???
+    //       })
+    //       .catch(error => {
+    //         console.error(error)
+    //         this.setState({ error })
+    //       })
+    //   }
+    
 
     showWidget = () => {
     
@@ -35,6 +75,7 @@ class NewItem extends Component {
       }
 
     render(){
+        const { error } =this.state
         return(
           <div className="NewItem_Form">
               <h1>
@@ -52,7 +93,7 @@ class NewItem extends Component {
                    <input id="title" name="title" type="text" placeholder="Title" required />
 
                 <br /><br />
-                   <section className="season">
+                   <section className="season" onChange={this.handleChangeSeason}>
                         <label htmlFor="season">
                             Season(s)
                         </label>
