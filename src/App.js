@@ -55,8 +55,8 @@ class App extends Component {
   //   });
   // }
 
-  updateContextState = (items) => {
-    this.setState({items: items})
+  updateContextState = (resitems) => {
+    this.setState({items: resitems})
   }
 
   renderNavRoutes(){

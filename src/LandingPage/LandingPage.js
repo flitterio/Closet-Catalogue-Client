@@ -16,9 +16,9 @@ static contextType = ApiContext;
 
 
 render(){
-    const userId = 1
+    //const userId = 1
     const {items=[]} = this.context
-    const closetItems = getClosetItems(items, userId)
+    //const closetItems = getClosetItems(items, userId)
     console.log(items)
 
     return(
@@ -37,7 +37,7 @@ render(){
                     Add Item 
                 </NewItemButton>
             <div className='group'>
-                {closetItems.map(item =>
+                {items.map(item =>
                     <div className='item' key={item.id}>
                         <Item 
                             id={item.id}
