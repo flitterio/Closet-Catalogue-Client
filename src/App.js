@@ -18,6 +18,9 @@ import config from './config';
 
 
 class App extends Component {
+  state ={
+    items: [],
+  }
   // state = {
   //   items: [],
   //   user: {},
@@ -83,15 +86,14 @@ class App extends Component {
   }
 
   render(){
-    // const value = {
-    //   items: this.state.items,
-    //   user: this.state.user,
-    // };
+    const value = {
+      items: this.state.items,
+    };
     //   deleteItem: this.handleDeleteItem,
     //   deleteUser: this.handleDeleteUser
     // };
     return(
-     
+     <ApiContext.Provider value={value}>
         <div className="App">
           <Header />
           <RenderError>
@@ -107,7 +109,7 @@ class App extends Component {
             <main className="App_main">{this.RenderMainRoutes()}</main>
           </RenderError>
         </div>
-
+        </ApiContext.Provider>
     );
   }
 }

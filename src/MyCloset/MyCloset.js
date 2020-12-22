@@ -3,12 +3,15 @@ import {Link } from 'react-router-dom'
 import ApiContext from '../ApiContext';
 import './MyCloset.css'
 import NewItemButton from '../NewItemButton/NewItemButton';
-import {getClosetItems} from '../items-helpers';
+//import {getClosetItems} from '../items-helpers';
 import Item from '../Item/Item';
 import TokenService from '../services/token-service';
 import config from '../config';
 
 class MyCloset extends Component {
+    state={
+        error: null,
+    }
     static defaultProps ={
         match: {
             params: {}
@@ -28,11 +31,14 @@ class MyCloset extends Component {
         .then(res => {
             if(!res.ok) {
             return res.json().then(error => Promise.reject(error))
-            
-         .then(responseJson =>
-            console.log('responsejson', responseJson))
+            }
+            return res.json();
+        })
+         .then(responseJson => {
+            console.log('responsejson', responseJson)
+            this.setState({items: responseJson})
+         })
         //console.log('res.json',res.json())
-        }})
     
 
     .catch(error => {
