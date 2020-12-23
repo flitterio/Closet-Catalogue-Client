@@ -55,8 +55,13 @@ class App extends Component {
   //   });
   // }
 
+  // clearItemsArray = () => {
+  //   this.setState({items: []})
+  // }
+
   updateContextState = (resitems) => {
-    this.setState({items: resitems})
+    if(this.state.items ==! resitems && this.state.items ==!''){
+    this.setState({items: resitems})}
   }
 
   renderNavRoutes(){
@@ -80,7 +85,7 @@ class App extends Component {
         component={LandingPage}/>
     <PublicOnlyRoute path="/register" component={Register} />
     <PublicOnlyRoute path="/sign-in" component={SignIn} />
-    <PrivateRoute path="/my-closet" component={MyCloset} />
+    <PrivateRoute path="/my-closet" component={() => <MyCloset updateContextState={this.updateContextState} />} />
     <PrivateRoute path="/my-profile" component={MyProfile}/>
     <PrivateRoute path="/new-item" component={NewItem}/>
     <PrivateRoute path="/item/:itemId" component={MyItem}/>
@@ -92,7 +97,6 @@ class App extends Component {
   render(){
     const value = {
       items: this.state.items,
-      updateContextState: this.updateContextState()
     };
     //   deleteItem: this.handleDeleteItem,
     //   deleteUser: this.handleDeleteUser
