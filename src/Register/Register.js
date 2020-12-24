@@ -11,6 +11,7 @@ class Register extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
+ 
         const { fname, lname, username, password, repassword, email } = ev.target
     
         this.setState({ error: null })

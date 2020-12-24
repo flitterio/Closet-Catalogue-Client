@@ -1,4 +1,3 @@
-import { traverseTwoPhase } from "react-dom/test-utils";
 
 export const tops= [
     {value: 'tshirt', label: 'T-shirt'},
@@ -89,4 +88,12 @@ export const groupedOptions = [
         options: miscellaneous
 
     }
+]
+
+export const seasons = [
+    {value:'winter', label:'Winter'},
+    {value:'spring', label:'Spring'},
+    {value:'summer', label:'Summer'},
+    {value:'fall', label: 'Fall'}
+
 ]
