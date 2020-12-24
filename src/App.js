@@ -55,12 +55,12 @@ class App extends Component {
   //   });
   // }
 
-  // clearItemsArray = () => {
-  //   this.setState({items: []})
-  // }
+  clearItemsArray = () => {
+    this.setState({items: []})
+  }
 
   updateContextState = (resitems) => {
-    if(this.state.items ==! resitems && this.state.items ==!''){
+    if(this.state.items ==! resitems || this.state.items === []){
     this.setState({items: resitems})}
   }
 
@@ -104,7 +104,7 @@ class App extends Component {
     return(
      <ApiContext.Provider value={value}>
         <div className="App">
-          <Header />
+          <Header clearItemsArray={this.clearItemsArray}/>
           <RenderError>
             <nav className="App_nav">{this.renderNavRoutes()}</nav>
           </RenderError>
