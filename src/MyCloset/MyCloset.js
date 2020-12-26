@@ -7,6 +7,7 @@ import NewItemButton from '../NewItemButton/NewItemButton';
 import Item from '../Item/Item';
 import TokenService from '../services/token-service';
 import config from '../config';
+import SearchBar from '../SearchBar/SearchBar';
 
 class MyCloset extends Component {
     state={
@@ -63,7 +64,8 @@ class MyCloset extends Component {
                 className='NewItem_button-container'>
                     Add Item 
                 </NewItemButton>
-            <div className='group'>
+                <SearchBar />
+            {/* <div className='group'>
                 {items.map(item =>
                     <div className='item' key={item.id}>
                         <Item 
@@ -73,7 +75,7 @@ class MyCloset extends Component {
                                 />
                             </div>
                          )}
-                </div>
+                </div> */}
         </article>
         )
     }

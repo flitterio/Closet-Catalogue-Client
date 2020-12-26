@@ -54,6 +54,13 @@ class App extends Component {
   //     console.error({error});
   //   });
   // }
+handleDeleteItem = itemId => {
+  const newItems = this.state.items.filter(item =>
+    item.id !== itemId)
+    this.setState({
+      items: newItems
+    })
+}
 
   clearItemsArray = () => {
     this.setState({items: []})
@@ -68,8 +75,6 @@ class App extends Component {
     return(
       <>
       <Link to="/">Home</Link>
-      <Link to="/register">Register</Link>
-      <Link to="/sign-in">Sign In </Link>
       <Link to="/my-closet"> My Closet </Link>
       <Link to="/my-profile"> My Profile </Link>
         </>
@@ -97,10 +102,9 @@ class App extends Component {
   render(){
     const value = {
       items: this.state.items,
-    };
-    //   deleteItem: this.handleDeleteItem,
+     deleteItem: this.handleDeleteItem,
     //   deleteUser: this.handleDeleteUser
-    // };
+     };
     return(
      <ApiContext.Provider value={value}>
         <div className="App">
