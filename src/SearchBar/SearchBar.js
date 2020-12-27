@@ -12,7 +12,7 @@ class SearchBar extends React.Component{
     };
     static contextType = ApiContext;
 
-    handleSearch= (event) =>{
+    handleWordSearch= (event) =>{
         this.setState({search: event.target.value})
     }
 
@@ -44,11 +44,13 @@ render(){
 
     return(
         <div className="searchbar">
+        <form className='searchbar'
+            onSubmit={this.handleSearch}>
             <input 
             type="text" 
             placeholder="Search"
             value={this.state.search}
-            onChange={this.handleSearch}/>
+            onChange={this.handleWordSearch}/>
 
      <select name="season" id="season" form="season" onChange={this.handleSeasonChange}>
          <option value='' >Season...</option>
@@ -63,6 +65,7 @@ render(){
                     onChange={this.handleCategoryFilter}
                     isClearable
                 />
+        </form>
 
         <div className='group'>
                 {categoryFilter.map(item =>

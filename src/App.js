@@ -15,7 +15,7 @@ import PrivateRoute from './Utils/PrivateRoute';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import Header from './Header/Header';
 import config from './config';
-
+import EditItem from './EditItem/EditItem';
 
 class App extends Component {
   state ={
@@ -94,6 +94,7 @@ handleDeleteItem = itemId => {
     <PrivateRoute path="/my-profile" component={MyProfile}/>
     <PrivateRoute path="/new-item" component={NewItem}/>
     <PrivateRoute path="/item/:itemId" component={MyItem}/>
+    <PrivateRoute path="/edit-item/:itemId" component={EditItem}/>
     <PrivateRoute path="/edit-user/:userId" component={EditUser} />
     </>
     );

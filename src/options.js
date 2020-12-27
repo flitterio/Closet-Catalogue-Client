@@ -91,9 +91,9 @@ export const groupedOptions = [
 ]
 
 export const seasons = [
-    {value:'winter', label:'Winter'},
-    {value:'spring', label:'Spring'},
-    {value:'summer', label:'Summer'},
-    {value:'fall', label: 'Fall'}
+    {value:'Winter', label:'Winter'},
+    {value:'Spring', label:'Spring'},
+    {value:'Summer', label:'Summer'},
+    {value:'Fall', label: 'Fall'}
 
 ]

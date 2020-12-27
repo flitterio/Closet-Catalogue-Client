@@ -1,4 +1,3 @@
-//NEED TO IMPLEMENT THE POST TO API, NEED TO FIX BEARER TOKEN
 
 
 import React, {Component} from 'react';
@@ -23,34 +22,35 @@ class NewItem extends Component {
           favorite: false
       };
     
-      handleCategoryChange = (e) => {
-          this.setState({
-              category: Array.isArray(e) ? e.map(x=> x.value) : []
-          })
+      handleCategoryChange = (event) => {
+          this.setState({category: event.target.value});
       }
       
-      handleFavoriteChange = (e) => {
-          this.setState({
-              favorite: true
-          })
-      }
+
+    handleFavoriteChange = (event) => {
+         const current = this.state.favorite;
+          const newVal = !current;
+           console.log("CURRENT:", current); console.log("NEW:", newVal); 
+           this.setState({ favorite: newVal }); 
+        };
     handleSeasonChange = (e) => {
-          this.setState({
-              season: Array.isArray(e) ? e.map(x=> x.value) : []
-          })
-      }
+            this.setState({
+                season: Array.isArray(e) ? e.map(x=> x.value) : []
+            })
+        }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const {title, image, season, category, favorite} = event.target
+        const submitSeason = this.state.season.join(', ')
+        const {title, favorite} = event.target
         
         const newItem = {
             id: '_' + Math.random().toString(36).substr(2, 9),
             title: title.value,
             image: this.state.cloudinary_url,
-            season: this.state.season,
+            season: submitSeason,
             category: this.state.category,
-            favorite: favorite.value,
+            favorite: this.state.favorite,
 
         }
 
@@ -128,7 +128,6 @@ class NewItem extends Component {
                    </label>
                    <input id="title" name="title" type="text" placeholder="Title" required />
 
-                <br /><br />
                    <section className="season" >
                         <label htmlFor="season">
                             Season(s)
@@ -148,16 +147,30 @@ class NewItem extends Component {
                             Category
                         </label>
                         <br />
-                        <Select id="category"
-                            options={groupedOptions}
-                            onChange={this.handleCategoryChange}
-                            isMulti
-                            isClearable
-                        />
+                        <select value={this.state.category}
+                        onChange={this.handleCategoryChange}
+                         name="category" id="category" form="category">
+                            <option value='' >Category...</option>
+                            <option value="Top">Tops</option>
+                            <option value="Bottom">Bottoms</option>
+                            <option value="Dress">Dress/Romper/Pantsuit/Jumpsuit</option>
+                            <option value="Outerwear">Outerwear</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Sleepwear">Sleepwear</option>
+                            <option value="Undergarments">Undergarments</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+
                     <br /><br />
                     </section>
 
-                <input id="favorite" type="checkbox" value='true' onChange={this.handleFavoriteChange} /> Favorite?
+                <input 
+                    name="favorite" 
+                    type="checkbox"
+                    checked={this.state.favorite}  
+                    onChange={this.handleFavoriteChange} /> Favorite?
                     
 
                 <br /><br />

@@ -60,6 +60,9 @@ export default class Item extends React.Component{
                     <h4>{item.season}</h4>
                     <h4>{item.category}</h4>
                     <h4>{item.favorite}</h4>
+                    <Link to={`/edit-item/${itemId}`}>
+                        Edit Item
+                    </Link>
                     <button type='button' onClick={this.handleClickDelete} >Delete Item </button>
                 </div>
                 )}
