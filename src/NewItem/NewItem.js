@@ -16,7 +16,7 @@ class NewItem extends Component {
       
       state ={
           error: null,
-          cloudinary_url: '',
+          cloudinary_url: 'https://res.cloudinary.com/francescalitterio/image/upload/v1609132050/placeholder.jpg',
           season: [],
           category: '',
           favorite: false
@@ -118,7 +118,7 @@ class NewItem extends Component {
 
             <section className="image">
                  <img id="image" width="50" height="50" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
-
+            <br/>
                 <button onClick={this.showWidget}> Upload Image </button>
                 <br /><br />
             </section>
@@ -159,6 +159,7 @@ class NewItem extends Component {
                             <option value="Accessories">Accessories</option>
                             <option value="Sleepwear">Sleepwear</option>
                             <option value="Undergarments">Undergarments</option>
+                            <option value="Athletic">Athletic</option>
                             <option value="Other">Other</option>
 
                         </select>

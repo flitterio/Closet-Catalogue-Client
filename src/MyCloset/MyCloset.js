@@ -80,5 +80,4 @@ class MyCloset extends Component {
         )
     }
 }
-
-export default MyCloset;
+export default MyCloset

@@ -1,24 +1,33 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {Input, Button} from '../Utils/Utils';
 import AuthApiService from '../services/auth-api-service';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
+
 
 class Register extends Component {
-    static defaultProps = {
-        onRegistrationSuccess: () => {}
-    }
-
-    state = {error:null }
-
+    
+    state = {
+        error:null,
+        passwordShown: false
+     }
+    
+togglePasswordVisiblity = () =>{
+    this.setState({passwordShown: !this.state.passwordShown })
+}
+onRegistrationSuccess = () => {
+    window.location.href='/sign-in'
+}
     handleSubmit = ev => {
         ev.preventDefault()
  
-        const { fname, lname, username, password, repassword, email } = ev.target
+        const { fname, lname, username, password, email } = ev.target
     
         this.setState({ error: null })
         AuthApiService.postUser({
             username: username.value,
             password: password.value,
-            repassword: repassword.value,
             fname: fname.value,
             lname: lname.value,
             email: email.value,
@@ -30,9 +39,8 @@ class Register extends Component {
             lname.value = ''
             username.value = ''
             password.value = ''
-            repassword.value= ''
             email.vaulue = ''
-            this.props.onRegistrationSuccess()
+            this.onRegistrationSuccess()
         })
         .catch(res => {
             this.setState({ error: res.error })
@@ -89,17 +97,20 @@ class Register extends Component {
                         Password 
                     </label>
                     <Input 
-                        type="password" id="password" name="password" 
+                        type={this.state.passwordShown ? "text" : "password"} 
+                        id="password" name="password" 
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" required />
+                    <i onClick={this.togglePasswordVisiblity}>{eye}</i>{" "}
+
                 <br /><br />
-                <label htmlFor="repassword">
+                {/* <label htmlFor="repassword">
                         Re-Enter Password 
                     </label>
                     <Input 
                         type="password" id="repassword" name="repassword" 
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Re-Enter Password" 
                         required />
-                <br /><br />
+                <br /><br /> */}
                     <Button type="submit">
                         Register
                         </Button>

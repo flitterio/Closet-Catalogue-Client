@@ -10,7 +10,7 @@ import MyCloset from './MyCloset/MyCloset';
 import MyProfile from './MyProfile/MyProfile';
 import NewItem from './NewItem/NewItem';
 import MyItem from './MyItem/MyItem';
-import EditUser from './EditUser/EditUser';
+//import EditUser from './EditUser/EditUser';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import Header from './Header/Header';
@@ -21,11 +21,8 @@ class App extends Component {
   state ={
     items: [],
   }
-  // state = {
-  //   items: [],
-  //   user: {},
-  // };
 
+  
   // componentDidMount(){
   //   //GET request to /items/userId
   //   // localhost/items/userID => data
@@ -67,7 +64,7 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-    if(this.state.items ==! resitems || this.state.items === []){
+    if(this.state.items !== resitems || this.state.items === []){
     this.setState({items: resitems})}
   }
 
@@ -95,7 +92,7 @@ handleDeleteItem = itemId => {
     <PrivateRoute path="/new-item" component={NewItem}/>
     <PrivateRoute path="/item/:itemId" component={MyItem}/>
     <PrivateRoute path="/edit-item/:itemId" component={EditItem}/>
-    <PrivateRoute path="/edit-user/:userId" component={EditUser} />
+    {/* <PrivateRoute path="/edit-user/:userId" component={EditUser} /> */}
     </>
     );
   }

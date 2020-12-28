@@ -4,7 +4,7 @@ import './MyProfile.css';
 import User from '../User/User';
 // import {getUser} from '../user-helpers';
 // import EditUser from '../EditUser/EditUser'
-import EditUserButton from '../EditUserButton/EditUserButton';
+//import EditUserButton from '../EditUserButton/EditUserButton';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import config from '../config';
@@ -50,9 +50,9 @@ class MyProfile extends Component {
     .catch(error => {
         console.error(error)
         this.setState({error})
-    })
+        })
 
-}
+    }
     render(){
         // const userId = 1
         // const {users=[]} = this.context
@@ -72,13 +72,13 @@ class MyProfile extends Component {
                     password = {user.password}
                         />
 
-                <EditUserButton
+                {/* <EditUserButton
                     //tag ={Link}
                     //to={`/edit-user/${userId}`}
                     type='button'
                     className='EditUser_button-container'>
                         Edit Profile
-                </EditUserButton>
+                </EditUserButton> */}
             </div>
         </article>
         )
