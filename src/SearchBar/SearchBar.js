@@ -93,7 +93,7 @@ render(){
 
     return(
     <div className="searchbar">
-        <form className='searchbar' style={{visibility: items ===[] ? 'visible' : 'hidden' }}>
+        <form className='searchbar' >
             <input 
                 type="text" 
                 placeholder="Search"
