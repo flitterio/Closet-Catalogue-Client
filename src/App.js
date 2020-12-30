@@ -64,7 +64,7 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-    if(this.state.items !== resitems || this.state.items === []){
+    if(resitems.length !== 0 && JSON.stringify(this.state.items) != JSON.stringify(resitems) ){
     this.setState({items: resitems})}
   }
 

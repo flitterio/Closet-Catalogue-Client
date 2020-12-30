@@ -5,13 +5,9 @@ import NewItemButton from '../NewItemButton/NewItemButton';
 import Item from '../Item/Item';
 
 class LandingPage extends Component {
-static defaultProps ={
-    match: {
-        params: {}
-    }
-}
+
 state={
-          items: [
+          landingitems: [
                     {
                 id: 1,
                 userId: 1,
@@ -174,7 +170,7 @@ state={
 
 
 render(){
-const {items=[]} = this.state
+const {landingitems=[]} = this.state
     return(
     <div className="landingpage_content">
          <section>
@@ -191,7 +187,7 @@ const {items=[]} = this.state
                     Add Item 
                 </NewItemButton>
             <div className='group'>
-                {items.map(item =>
+                {landingitems.map(item =>
                     <div className='item' key={item.id}>
                         <Item 
                             id={item.id}
