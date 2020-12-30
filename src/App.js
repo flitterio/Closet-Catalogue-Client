@@ -67,7 +67,9 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-    if(this.state.items ==! resitems || this.state.items === []){
+    console.log(resitems.length)
+    if(resitems.length !== 0 && this.state.items ==! resitems ){
+      console.log('setting state')
     this.setState({items: resitems})}
   }
 
