@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import './MyProfile.css';
 import User from '../User/User';
-// import {getUser} from '../user-helpers';
-// import EditUser from '../EditUser/EditUser'
-//import EditUserButton from '../EditUserButton/EditUserButton';
+//import {getUser} from '../user-helpers';
+import EditUser from '../EditUser/EditUser'
+import EditUserButton from '../EditUserButton/EditUserButton';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
 import config from '../config';
@@ -72,13 +72,13 @@ class MyProfile extends Component {
                     password = {user.password}
                         />
 
-                {/* <EditUserButton
-                    //tag ={Link}
-                    //to={`/edit-user/${userId}`}
+                <EditUserButton
+                    tag ={Link}
+                    to={`/edit-user`}
                     type='button'
                     className='EditUser_button-container'>
                         Edit Profile
-                </EditUserButton> */}
+                </EditUserButton>
             </div>
         </article>
         )

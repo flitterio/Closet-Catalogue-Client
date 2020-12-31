@@ -28,6 +28,7 @@ class SignIn extends Component {
         const destination = (location.state || {})
         .from || '/my-closet'
         history.push(destination)
+        window.location.reload()
       }
 
     handleSubmitBasicAuth = ev => {

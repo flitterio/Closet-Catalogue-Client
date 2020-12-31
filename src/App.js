@@ -10,7 +10,7 @@ import MyCloset from './MyCloset/MyCloset';
 import MyProfile from './MyProfile/MyProfile';
 import NewItem from './NewItem/NewItem';
 import MyItem from './MyItem/MyItem';
-//import EditUser from './EditUser/EditUser';
+import EditUser from './EditUser/EditUser';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import Header from './Header/Header';
@@ -51,6 +51,10 @@ class App extends Component {
   //     console.error({error});
   //   });
   // }
+  handleDeleteUser = userId => {
+    window.location.href='/'
+    console.log('user deleted')
+  }
 handleDeleteItem = itemId => {
   const newItems = this.state.items.filter(item =>
     item.id !== itemId)
@@ -92,7 +96,7 @@ handleDeleteItem = itemId => {
     <PrivateRoute path="/new-item" component={NewItem}/>
     <PrivateRoute path="/item/:itemId" component={MyItem}/>
     <PrivateRoute path="/edit-item/:itemId" component={EditItem}/>
-    {/* <PrivateRoute path="/edit-user/:userId" component={EditUser} /> */}
+    <PrivateRoute path="/edit-user" component={EditUser} />
     </>
     );
   }
@@ -101,7 +105,7 @@ handleDeleteItem = itemId => {
     const value = {
       items: this.state.items,
      deleteItem: this.handleDeleteItem,
-    //   deleteUser: this.handleDeleteUser
+      deleteUser: this.handleDeleteUser
      };
     return(
      <ApiContext.Provider value={value}>

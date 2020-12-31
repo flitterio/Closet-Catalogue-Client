@@ -113,7 +113,7 @@ render(){
                     <option value='' >Category...</option>
                     <option value="Top">Tops</option>
                     <option value="Bottom">Bottoms</option>
-                    <option value="Dress">Dress/Romper/Pantsuit/Jumpsuit</option>
+                    <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
                     <option value="Outerwear">Outerwear</option>
                     <option value="Shoes">Shoes</option>
                     <option value="Accessories">Accessories</option>
