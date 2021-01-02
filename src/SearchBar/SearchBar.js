@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import ApiContext from '../ApiContext';
 import Select from 'react-select';
-import{ seasons} from '../options'
+import{ seasons} from '../options';
 
 class SearchBar extends React.Component{
     static contextType = ApiContext;
@@ -10,7 +10,6 @@ class SearchBar extends React.Component{
         search: '',
         season: '',
         category: '',
-        favorite: false,
         
     };
 
@@ -30,11 +29,7 @@ class SearchBar extends React.Component{
     handleCategoryFilter = (event) => {
         this.setState({category: event.target.value})
     }
-    handleFavoriteFilter = (event) => {
-        const current = this.state.favorite;
-        const newVal = !current;
-         this.setState({ favorite: newVal }); 
-    };
+
 
     // handleSearch = (event) => {
     //     event.preventDefault();
@@ -98,8 +93,7 @@ render(){
 
     return(
     <div className="searchbar">
-        <form className='searchbar'
-        onSubmit={this.handleSearch}>
+        <form className='searchbar' >
             <input 
                 type="text" 
                 placeholder="Search"
@@ -119,20 +113,16 @@ render(){
                     <option value='' >Category...</option>
                     <option value="Top">Tops</option>
                     <option value="Bottom">Bottoms</option>
-                    <option value="Dress">Dress/Romper/Pantsuit/Jumpsuit</option>
+                    <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
                     <option value="Outerwear">Outerwear</option>
                     <option value="Shoes">Shoes</option>
                     <option value="Accessories">Accessories</option>
                     <option value="Sleepwear">Sleepwear</option>
                     <option value="Undergarments">Undergarments</option>
+                    <option value="Athletic">Athletic</option>
                     <option value="Other">Other</option>
 
                 </select>
-                <input 
-                    name="favorite" 
-                    type="checkbox"
-                    checked={this.state.favorite}  
-                    onChange={this.handleFavoriteFilter} /> Favorite?
 
                 <button type='button' name='clear' onClick={this.clearSearch}>Clear Search</button>
             </form>

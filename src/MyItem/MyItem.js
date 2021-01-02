@@ -5,6 +5,10 @@ import ApiContext from '../ApiContext'
 import { findItem } from '../items-helpers'
 import TokenService from '../services/token-service'
 import config from '../config'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+const star = <FontAwesomeIcon icon={faStar} />;
+
 
 
 export default class Item extends React.Component{
@@ -14,6 +18,7 @@ export default class Item extends React.Component{
             params: {}
           }
     }
+
     static contextType = ApiContext;
 
     handleClickDelete = e => {
@@ -52,14 +57,21 @@ export default class Item extends React.Component{
             <ApiContext.Consumer>
                 {(context) => (
                 <div className='MyItem'>
+                  <Link to={`/my-closet`}>
+                        Back
+                    </Link>
+                    <br /><br />
+
                     <img src={item.image} alt={item.title} />
                     <br />
                     <h3 className='MyItem_title'>
                             {item.title}
+                  <i style={{visibility: item.favorite ? 'visible' : 'hidden'}}>{star}</i>
                     </h3>
-                    <h4>{item.season}</h4>
-                    <h4>{item.category}</h4>
-                    <h4>{item.favorite}</h4>
+                    <h4>Season(s)</h4>
+                    <h5>{item.season}</h5>
+                    <h4>Category</h4>
+                    <h5>{item.category}</h5>
                     <Link to={`/edit-item/${itemId}`}>
                         Edit Item
                     </Link>

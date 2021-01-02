@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import './MyProfile.css';
 import User from '../User/User';
-// import {getUser} from '../user-helpers';
-// import EditUser from '../EditUser/EditUser'
+//import {getUser} from '../user-helpers';
+import EditUser from '../EditUser/EditUser'
 import EditUserButton from '../EditUserButton/EditUserButton';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
@@ -50,9 +50,9 @@ class MyProfile extends Component {
     .catch(error => {
         console.error(error)
         this.setState({error})
-    })
+        })
 
-}
+    }
     render(){
         // const userId = 1
         // const {users=[]} = this.context
@@ -73,8 +73,8 @@ class MyProfile extends Component {
                         />
 
                 <EditUserButton
-                    //tag ={Link}
-                    //to={`/edit-user/${userId}`}
+                    tag ={Link}
+                    to={`/edit-user`}
                     type='button'
                     className='EditUser_button-container'>
                         Edit Profile
