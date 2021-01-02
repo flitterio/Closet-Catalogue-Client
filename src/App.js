@@ -14,7 +14,6 @@ import EditUser from './EditUser/EditUser';
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import Header from './Header/Header';
-import config from './config';
 import EditItem from './EditItem/EditItem';
 
 class App extends Component {
@@ -68,8 +67,10 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-    if(resitems.length !== 0 && JSON.stringify(this.state.items) != JSON.stringify(resitems) ){
-    this.setState({items: resitems})}
+    console.log('updatecomponentstate')
+    if(resitems.length !== 0 && JSON.stringify(this.state.items) !== JSON.stringify(resitems) ){
+      console.log('setting the state')
+      this.setState({items: resitems})}
   }
 
   renderNavRoutes(){
@@ -105,7 +106,8 @@ handleDeleteItem = itemId => {
     const value = {
       items: this.state.items,
      deleteItem: this.handleDeleteItem,
-      deleteUser: this.handleDeleteUser
+      deleteUser: this.handleDeleteUser,
+      updateContextState: this.updateContextState,
      };
     return(
      <ApiContext.Provider value={value}>

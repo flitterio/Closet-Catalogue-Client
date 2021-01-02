@@ -9,6 +9,8 @@ import config from '../config';
 import TokenService from '../services/token-service';
 import {findItem} from '../items-helpers'
 import {Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class EditItem extends Component {
@@ -105,7 +107,18 @@ componentDidMount(){
               }
           })
            .then(data => {
-            window.location.href=`/items/${itemId}`
+            toast.dark('Success, Item Edited! Redirecting to My Closet...', {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setTimeout(()=>{
+            this.props.history.push('/my-closet');
+            }, 4000)
            })
           
           .catch(error => {
@@ -151,7 +164,18 @@ componentDidMount(){
               }
           })
            .then(data => {
-              window.location.href=`/items/${itemId}`
+            toast.dark('Success, Item Edited! Redirecting to My Closet...', {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setTimeout(()=>{
+            this.props.history.push('/my-closet');
+            }, 4000)
            })
           
           .catch(error => {
@@ -181,6 +205,7 @@ componentDidMount(){
         const item = findItem(items, itemId);
         return(
           <div className="EditItem_Form">
+              <ToastContainer />
               <h1>
                     Edit Item
                 </h1>

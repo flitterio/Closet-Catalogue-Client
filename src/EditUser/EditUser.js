@@ -6,6 +6,7 @@ import TokenService from '../services/token-service';
 import config from '../config';
 import {Link} from 'react-router-dom';
 import DeleteUser from '../DeleteUser/DeleteUser'
+import { toast, ToastContainer } from 'react-toastify';
 
 
 class EditUser extends Component {
@@ -121,7 +122,18 @@ class EditUser extends Component {
             }
         })
          .then(data => {
-            window.location.href='/my-profile'
+          toast.dark('Success, User Updated! Redirecting to My Profile...', {
+            position: "top-right",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        setTimeout(()=>{
+        this.props.history.push('/my-profile');
+        }, 4000)
          })
         
         .catch(error => {
@@ -139,6 +151,7 @@ handleClickCancel = () => {
 
         return(
             <section className='EditUser'>
+              <ToastContainer />
             <h2>Edit User</h2>
             <form
               className='EditUser__form'
@@ -209,21 +222,7 @@ handleClickCancel = () => {
                   onChange={this.handleChangeEmail}
                 />
               </div>
-              {/* <div>
-                <label htmlFor='pwd'>
-                  Password
-                  {' '}
 
-                </label>
-                <input 
-                    type="password" 
-                    id="pwd" 
-                    name="pwd" 
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" 
-                  value={password}
-                  onChange={this.handleChangePassword}
-                />
-              </div> */}
               <div className='EditUser__buttons'>
                 <Link to={`/my-profile`}>
                     Cancel

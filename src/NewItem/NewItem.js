@@ -4,10 +4,11 @@ import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import PropTypes from 'prop-types';
 import './NewItem.css';
-import {groupedOptions, seasons} from '../options';
+import {seasons} from '../options';
 import Select from 'react-select';
 import config from '../config';
 import TokenService from '../services/token-service';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -78,13 +79,18 @@ class NewItem extends Component {
               }
           })
            .then(data => {
-        //       id.value= ''
-        //     title.value = ''
-        //     image.value =''
-        //     season.value = ''
-        //     category.value =''
-        //      favorite.value =''
-              window.location.href='/my-closet'
+            toast.dark('Success, New Item Added! Redirecting to My Closet...', {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setTimeout(()=>{
+            this.props.history.push('/my-closet');
+            }, 4000)
            })
           
           .catch(error => {
@@ -110,6 +116,7 @@ class NewItem extends Component {
         const { error } =this.state
         return(
           <div className="NewItem_Form">
+              <ToastContainer />
               <h1>
                     New Item
                 </h1>
