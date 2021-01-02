@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Item.css'
 import ApiContext from '../ApiContext'
-import TokenService from '../services/token-service'
+
 
 export default class Item extends React.Component{
     static contextType =ApiContext;
@@ -10,7 +10,6 @@ export default class Item extends React.Component{
 
     render(){
         const {id, title, image} = this.props
-        console.log({image});
         return(
             <div className='Item'>
 

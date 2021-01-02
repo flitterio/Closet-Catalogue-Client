@@ -18,8 +18,6 @@ export default class User extends React.Component {
                     <p>{fname} {lname}</p>
                 <h3>Email:</h3>
                     <p>{email}</p>
-                <h3>Password:</h3>
-                    <p>hidden</p>
             </div>
         )
     }

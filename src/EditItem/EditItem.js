@@ -8,13 +8,16 @@ import Select from 'react-select';
 import config from '../config';
 import TokenService from '../services/token-service';
 import {findItem} from '../items-helpers'
+import {Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class EditItem extends Component {
     static defaultProps ={
-        history: {
-            goBack: ()=> { }
-        },
+        // history: {
+        //     goBack: ()=> { }
+        // },
         match: {
             params: {}
           }
@@ -104,7 +107,18 @@ componentDidMount(){
               }
           })
            .then(data => {
-               window.location.href='/my-closet'
+            toast.dark('Success, Item Edited! Redirecting to My Closet...', {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setTimeout(()=>{
+            this.props.history.push('/my-closet');
+            }, 4000)
            })
           
           .catch(error => {
@@ -150,7 +164,18 @@ componentDidMount(){
               }
           })
            .then(data => {
-              window.location.href='/my-closet'
+            toast.dark('Success, Item Edited! Redirecting to My Closet...', {
+                position: "top-right",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            setTimeout(()=>{
+            this.props.history.push('/my-closet');
+            }, 4000)
            })
           
           .catch(error => {
@@ -175,9 +200,12 @@ componentDidMount(){
       }
 
     render(){
-
+        const {items=[]} = this.context
+        const {itemId}= this.props.match.params
+        const item = findItem(items, itemId);
         return(
           <div className="EditItem_Form">
+              <ToastContainer />
               <h1>
                     Edit Item
                 </h1>
@@ -221,12 +249,13 @@ componentDidMount(){
                             <option value='' >Category...</option>
                             <option value="Top">Tops</option>
                             <option value="Bottom">Bottoms</option>
-                            <option value="Dress">Dress/Romper/Pantsuit/Jumpsuit</option>
+                            <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
                             <option value="Outerwear">Outerwear</option>
                             <option value="Shoes">Shoes</option>
                             <option value="Accessories">Accessories</option>
                             <option value="Sleepwear">Sleepwear</option>
                             <option value="Undergarments">Undergarments</option>
+                            <option value="Athletic">Athletic</option>
                             <option value="Other">Other</option>
 
                         </select>
@@ -243,9 +272,11 @@ componentDidMount(){
 
                 <br /><br />
                     <input type="submit" value="Update Item" name="submit" />
-                    <button  onClick={() => this.props.history.goBack()}>Cancel</button>
+                        <Link to={`/item/${itemId}`}>
+                            Cancel
+                        </Link>
                     <br /><br />
-                    
+
             </form>
             </section>
           </div>
