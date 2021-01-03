@@ -31,7 +31,6 @@ class NewItem extends Component {
     handleFavoriteChange = (event) => {
          const current = this.state.favorite;
           const newVal = !current;
-           console.log("CURRENT:", current); console.log("NEW:", newVal); 
            this.setState({ favorite: newVal }); 
         };
     handleSeasonChange = (e) => {
@@ -107,7 +106,6 @@ class NewItem extends Component {
         (error, result) => {
           if (!error && result && result.event === "success") { 
           this.setState({cloudinary_url: result.info.url}) 
-          console.log('cloudinaryurl', this.state.cloudinary_url)
         }});
         widget.open()
       }

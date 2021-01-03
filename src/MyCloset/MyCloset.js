@@ -21,7 +21,6 @@ class MyCloset extends Component {
     static contextType = ApiContext
 
     componentDidMount() {
-        console.log(TokenService.getAuthToken())
         fetch(`${config.API_ENDPOINT}/items`, {
             method: 'GET',
             headers: {
@@ -36,12 +35,10 @@ class MyCloset extends Component {
             return res.json();
         })
          .then(responseJson => {
-            console.log('responsejson', responseJson)
             const resitems = responseJson
             this.props.updateContextState(resitems)
-            //this.setState({items: responseJson})
          })
-        //console.log('res.json',res.json())
+
     
 
     .catch(error => {
@@ -51,9 +48,7 @@ class MyCloset extends Component {
 
 }
     render(){
-        //const userId = 1
         const {items=[]} = this.context
-        //const closetItems = getClosetItems(items, userId)
             
         return(
         <article id="my catalogue">

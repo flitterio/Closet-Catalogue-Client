@@ -52,8 +52,7 @@ componentDidMount(){
 
     handleFavoriteChange = (event) => {
          const current = this.state.favorite;
-          const newVal = !current;
-           console.log("CURRENT:", current); console.log("NEW:", newVal); 
+          const newVal = !current; 
            this.setState({ favorite: newVal }); 
         };
     handleSeasonChange = (e) => {
@@ -194,7 +193,6 @@ componentDidMount(){
         (error, result) => {
           if (!error && result && result.event === "success") { 
           this.setState({cloudinary_url: result.info.url}) 
-          console.log('cloudinaryurl', this.state.cloudinary_url)
         }});
         widget.open()
       }

@@ -27,7 +27,6 @@ class EditUser extends Component {
     };
 
     componentDidMount() {
-      console.log(TokenService.getAuthToken())
       fetch(`${config.API_ENDPOINT}/users`, {
           method: 'GET',
           headers: {
@@ -45,7 +44,6 @@ class EditUser extends Component {
           this.setState({
               user: responseJson 
             }) 
-          console.log('this.state.user', this.state.user)
           this.setState({
             id: this.state.user.id,
             fname: this.state.user.fname,
@@ -54,7 +52,6 @@ class EditUser extends Component {
             email: this.state.user.email,
             password: this.state.user.password
        })
-       console.log(this.state.username)
     })
 
 

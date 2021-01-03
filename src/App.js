@@ -23,7 +23,6 @@ class App extends Component {
 
   handleDeleteUser = userId => {
     window.location.href='/'
-    console.log('user deleted')
   }
 handleDeleteItem = itemId => {
   const newItems = this.state.items.filter(item =>
@@ -38,9 +37,7 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-    console.log('updatecomponentstate')
     if(resitems.length !== 0 && JSON.stringify(this.state.items) !== JSON.stringify(resitems) ){
-      console.log('setting the state')
       this.setState({items: resitems})}
   }
 

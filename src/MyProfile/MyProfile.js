@@ -23,7 +23,6 @@ class MyProfile extends Component {
     static contextType = ApiContext
 
     componentDidMount() {
-        console.log(TokenService.getAuthToken())
         fetch(`${config.API_ENDPOINT}/users`, {
             method: 'GET',
             headers: {
@@ -39,12 +38,7 @@ class MyProfile extends Component {
         })
          .then(responseJson => {
             this.setState({user: responseJson }) 
-            //const resitems = responseJson
-            //this.props.updateContextState(resitems)
-            //this.setState({items: responseJson})
-            console.log('this.state.user', this.state.user)
          })
-        //console.log('res.json',res.json())
     
 
     .catch(error => {
@@ -54,10 +48,6 @@ class MyProfile extends Component {
 
     }
     render(){
-        // const userId = 1
-        // const {users=[]} = this.context
-        // const userInfo = getUser(users, userId)
-        // const { id, fname, lname, email, username, password} = this.state.user
         const { user=[]} = this.state
 
         return(
