@@ -21,35 +21,6 @@ class App extends Component {
     items: [],
   }
 
-  
-  // componentDidMount(){
-  //   //GET request to /items/userId
-  //   // localhost/items/userID => data
-  //   //set context with array of items for user id=1
-
-  //   fetch(`${config.API_ENDPOINT}/items`, {
-  //     method:'GET',
-  //     headers: {
-  //       'content-type '
-  //     }
-  //   })
-
-  //   .then(([itemsRes, usersRes]) => {
-  //     if(!itemsRes.ok)
-  //     return itemsRes.json().then(e => 
-  //     reject(e));
-
-  //     return itemsRes.json();
-  //   })
-
-  //   .then(([items, users]) => {
-  //     this.setState({items, users})
-  //   })
-
-  //   .catch(error =>{
-  //     console.error({error});
-  //   });
-  // }
   handleDeleteUser = userId => {
     window.location.href='/'
     console.log('user deleted')
@@ -67,17 +38,10 @@ handleDeleteItem = itemId => {
   }
 
   updateContextState = (resitems) => {
-<<<<<<< HEAD
-    console.log(resitems.length)
-    if(resitems.length !== 0 && this.state.items ==! resitems ){
-      console.log('setting state')
-    this.setState({items: resitems})}
-=======
     console.log('updatecomponentstate')
     if(resitems.length !== 0 && JSON.stringify(this.state.items) !== JSON.stringify(resitems) ){
       console.log('setting the state')
       this.setState({items: resitems})}
->>>>>>> cleanup
   }
 
   renderNavRoutes(){
