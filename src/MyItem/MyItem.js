@@ -75,7 +75,7 @@ export default class Item extends React.Component{
                     <Link to={`/edit-item/${itemId}`}>
                         Edit Item
                     </Link>
-                    <button type='button' onClick={this.handleClickDelete} >Delete Item </button>
+                    <button id="buttonstyle" type='button' onClick={this.handleClickDelete} >Delete Item </button>
                 </div>
                 )}
             </ApiContext.Consumer>

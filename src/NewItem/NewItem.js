@@ -124,7 +124,7 @@ class NewItem extends Component {
             <section className="image">
                  <img id="image" width="50" height="50" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
             <br/>
-                <button onClick={this.showWidget}> Upload Image </button>
+                <button id="buttonstyle" onClick={this.showWidget}> Upload Image </button>
                 <br /><br />
             </section>
 

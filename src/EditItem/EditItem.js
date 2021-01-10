@@ -213,7 +213,7 @@ componentDidMount(){
             <section className="image">
                  <img id="image" width="50" height="50" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
 
-                <button onClick={this.showWidget}> Upload New Image </button>
+                <button id="buttonstyle" onClick={this.showWidget}> Upload New Image </button>
                 <br /><br />
             </section>
 

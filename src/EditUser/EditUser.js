@@ -224,7 +224,7 @@ handleClickCancel = () => {
                 <Link to={`/my-profile`}>
                     Cancel
                 </Link>
-                <button type='submit'>
+                <button id="buttonstyle" type='submit'>
                   Save
                 </button>
               </div>

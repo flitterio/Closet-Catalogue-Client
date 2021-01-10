@@ -179,12 +179,12 @@ const {landingitems=[]} = this.state
         </section>
         <br />
         <article id="sample catalogue">
-            <NewItemButton
+            <NewItemButton id="buttonstyle"
                 tag={Link}
                 to='/new-item'
                 type='button'
                 className='NewItem_button-container'>
-                    Add Item 
+                    ADD ITEM 
                 </NewItemButton>
             <div className='group'>
                 {landingitems.map(item =>

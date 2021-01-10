@@ -18,12 +18,13 @@ export default class Header extends Component {
 
   renderLogoutLink() {
     return (
-      <div className='Header__logged-in'>
+      <div className='Header__logged-in' >
         <Link
           onClick={this.handleLogoutClick}
-          to='/'>
+          to='/' className="link">
           Logout
         </Link>
+        {this.props.renderNavRoutes()}
       </div>
     )
   }
@@ -32,13 +33,14 @@ export default class Header extends Component {
     return (
       <div className='Header__not-logged-in'>
         <Link
-          to='/register'>
-          Register
-        </Link>
+          to='/register' className="link">
+          Register 
+        </Link> 
         <Link
-          to='/sign-in'>
-          Log in
+          to='/sign-in' className="link">
+           | Log in 
         </Link>
+        {this.props.renderNavRoutes()}
       </div>
     )
   }
@@ -48,7 +50,7 @@ export default class Header extends Component {
       <nav className='Header'>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          : this.renderLoginLink()}  
       </nav>
     )
   }

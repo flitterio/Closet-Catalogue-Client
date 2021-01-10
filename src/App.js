@@ -44,9 +44,9 @@ handleDeleteItem = itemId => {
   renderNavRoutes(){
     return(
       <>
-      <Link to="/">Home</Link>
-      <Link to="/my-closet"> My Closet </Link>
-      <Link to="/my-profile"> My Profile </Link>
+      <Link to="/" className="link"> | Home</Link> |
+      <Link to="/my-closet" className="link"> My Closet </Link> |
+      <Link to="/my-profile"className="link"> My Profile </Link> 
         </>
     )
   }
@@ -80,13 +80,16 @@ handleDeleteItem = itemId => {
     return(
      <ApiContext.Provider value={value}>
         <div className="App">
-          <Header clearItemsArray={this.clearItemsArray}/>
-          <RenderError>
-            <nav className="App_nav">{this.renderNavRoutes()}</nav>
-          </RenderError>
-          <header className="App_header">
+        <header className="App_header">
+          <Header className="element" clearItemsArray={this.clearItemsArray}
+          renderNavRoutes={this.renderNavRoutes}/>
+          {/* <RenderError>
+            <nav className="App_nav element">{this.renderNavRoutes()}</nav>
+          </RenderError> */}
             <h1>
-              <Link to="/">Closet Catalogue</Link>
+              <Link to="/" >
+                <img className="logo" src="cc-logo.JPG" alt="Closet Catalogue Logo" />
+              </Link>
               {' '}
             </h1>
           </header>

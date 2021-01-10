@@ -124,7 +124,7 @@ render(){
 
                 </select>
 
-                <button type='button' name='clear' onClick={this.clearSearch}>Clear Search</button>
+                <button type='button' id="buttonstyle" name='clear' onClick={this.clearSearch}>Clear Search</button>
             </form>
             <div className='group'>
                     {searchItems.map(item =>

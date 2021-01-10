@@ -51,7 +51,7 @@ class MyCloset extends Component {
         const {items=[]} = this.context
             
         return(
-        <article id="my catalogue">
+        <article id="my-closet">
             <NewItemButton
                 tag={Link}
                 to='/new-item'
