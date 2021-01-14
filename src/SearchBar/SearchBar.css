@@ -1,0 +1,25 @@
+#search, #category {
+
+    margin: 0 10px !important;
+    width: 30% !important;
+}
+
+#season{
+    margin: 20px;
+    width: 20%;
+    /* padding: 10px; */
+}
+
+.searchbar{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+#search{
+    flex-grow: 1;
+}
+
+#season, #category{
+    flex-grow: 2;
+}

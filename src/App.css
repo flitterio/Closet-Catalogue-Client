@@ -16,7 +16,7 @@
   background-color:#e8dbc5 ;
 } */
 p{
-  font-size: 20px;
+  font-size: 15px;
 }
 form, input, select, p, h5{
   font-family: 'Roboto';
@@ -26,11 +26,11 @@ h1, h2, h3, h4{
 }
 h1{
   font-weight: 200;
-  font-size: 45px;
+  font-size: 35px;
 }
 h2{
   font-weight: 400;
-  font-size: 35px;
+  font-size: 25px;
 }
 h3, button{
   font-weight: 400;
@@ -39,7 +39,7 @@ h3, button{
 nav{
   text-transform: uppercase;
   margin-top: 20px ;
-  font-size: 30px;
+  font-size: 25px;
   display:flex;
   justify-content: space-evenly;
   background-color:#c3a29e ;
@@ -59,11 +59,11 @@ nav{
   background-color: #8d6b94; 
   border: none;
   color:#fff4e9;
-  padding: 15px 32px;
+  padding: 10px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 15px;
   transition-duration: 0.4s;
   font-family: 'Oswald';
 }
@@ -74,13 +74,18 @@ nav{
 }
 
 .logo{
-  width: 150px;
+  width: 100px;
   height: auto;
 }
 
-
 @media all and (min-width: 800px){ /*fullscreen design*/
+  nav{
+    font-size: 30px;
 
+  }
+  .logo{
+  width: 150px;
+}
   .group{
     display: flex;
     flex-direction: row;
@@ -89,6 +94,19 @@ nav{
   .item{
     flex: 1 0 21%; /* explanation below */
     margin: 0px;
+  }
+  h1{
+    font-weight: 200;
+    font-size: 45px;
+  }
+  h2{
+    font-weight: 400;
+    font-size: 35px;
+  }
+  p{
+    font-size: 20px;
+  }
+  #buttonstyle{
 
   }
 

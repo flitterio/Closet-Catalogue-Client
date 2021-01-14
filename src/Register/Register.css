@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box;
 }
-input {
+.Input {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -69,7 +69,7 @@ input {
     }
 
     .container{
-        margin: 0 75px;
+        margin: 0 30px;
     }
 
       .col-70{

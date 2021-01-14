@@ -113,12 +113,13 @@ class NewItem extends Component {
     render(){
         const { error } =this.state
         return(
-          <div className="NewItem_Form">
+          <div >
               <ToastContainer />
               <h1>
                     New Item
                 </h1>
-            <section>
+        <div className="newItem_Form">
+            <section >
                 <form action="upload.php" method="post" encType="multipart/form-data" id="register" onSubmit={this.handleSubmit}>
 
             <section className="image">
@@ -171,12 +172,13 @@ class NewItem extends Component {
 
                     <br /><br />
                     </section>
-
+                   <label htmlFor="favorite">Favorite?</label> 
                 <input 
+                    id="favorite"
                     name="favorite" 
                     type="checkbox"
                     checked={this.state.favorite}  
-                    onChange={this.handleFavoriteChange} /> Favorite?
+                    onChange={this.handleFavoriteChange} /> 
                     
 
                 <br /><br />
@@ -185,6 +187,7 @@ class NewItem extends Component {
                     
             </form>
             </section>
+            </div>
           </div>
         )
     }

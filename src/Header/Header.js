@@ -34,12 +34,12 @@ export default class Header extends Component {
       <div className='Header__not-logged-in'>
         <Link
           to='/register' className="link">
-          Register 
-        </Link> 
+          Register&nbsp; 
+        </Link> |
         <Link
           to='/sign-in' className="link">
-           | Log in 
-        </Link>
+           &nbsp;Log in 
+        </Link> |
         {this.props.renderNavRoutes()}
       </div>
     )

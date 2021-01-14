@@ -3,6 +3,7 @@ import Item from '../Item/Item';
 import ApiContext from '../ApiContext';
 import Select from 'react-select';
 import{ seasons} from '../options';
+import './SearchBar.css';
 
 class SearchBar extends React.Component{
     static contextType = ApiContext;
@@ -95,6 +96,7 @@ render(){
     <div className="searchbar">
         <form className='searchbar' >
             <input 
+                id="search"
                 type="text" 
                 placeholder="Search"
                 value={this.state.search}

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
 import './SignIn.css';
+import {Link} from 'react-router-dom';
 import {Button, Input } from '../Utils/Utils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -116,7 +117,15 @@ class SignIn extends Component {
             </div>
             </div>
             </form>
-            </div>
+        <div className="redirect"> 
+            <h3>not a member yet?&nbsp; 
+                <Link to='/register'>
+                     Click Here
+                </Link>
+                &nbsp;to register! 
+            </h3>
+        </div>
+ </div>
         )
     }
 }
