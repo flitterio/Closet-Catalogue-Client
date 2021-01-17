@@ -1,5 +1,11 @@
 img{
     width: 130px;
-    height: auto;
+    height: 180px;
     margin: 5px;
 }
+
+.sample-item{
+    flex: 1 0 21%; 
+    margin: 0px;
+}
+

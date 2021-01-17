@@ -1,0 +1,36 @@
+/* .EditUser__form{
+    border-radius: 5px;
+    background-color: #c3a29e;
+    padding: 20px;
+    margin: 0 250px;
+}
+
+@media screen and (max-width: 1100px) {
+    .col-25, .col-75,  input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .EditUser__form{
+        margin: 0 30px;
+    }
+
+      .col-70{
+          width: 80%;
+      }
+    i{
+        width: 10%;
+    }
+    .submit{
+        text-align: center;
+    }
+  } */
+
+ #fname, #lname, #username, #email {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 20px;
+  }

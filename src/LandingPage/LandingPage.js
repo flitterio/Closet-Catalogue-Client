@@ -190,7 +190,7 @@ console.log('landing items', this.context.landingitems)
                 </NewItemButton>
             <div className='group'>
                 {landingitems.map(item =>
-                    <div className='item' key={item.id}>
+                    <div className='sample-item' key={item.id}>
                         <Link to={`/sample-item/${item.id}`} >
                             <img src={item.image} alt={item.title} />
                         </Link>

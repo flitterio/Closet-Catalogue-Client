@@ -1,25 +1,74 @@
-#search, #category {
-
-    margin: 0 10px !important;
-    width: 30% !important;
+#search{
+    height: 35px;
+    margin-top: 10px;
+    border-color: #cccccc;
+    border-width: thin;
+    border-radius: 5px;
 }
 
 #season{
-    margin: 20px;
-    width: 20%;
-    /* padding: 10px; */
+    margin-bottom: 20px;
 }
+
+#category{
+    border-radius: 5px;
+    border-color: #cccccc;
+    border-width: thin;
+}
+
 
 .searchbar{
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid #8d6b94;
+    border-radius: 25px;
+}
+
+#clear{
+    background-color: #fff4e9; 
+    border: none;
+    color: #8d6b94;
+    padding: 10px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    transition-duration: 0.4s;
+    font-family: 'Oswald';
+}
+#clear:hover {
+    background-color: #32202D;
+    color: white;
+  }
+
+.item{
+    display: flex;
+    /* justify-content: space-evenly; */
+    /* justify-items: flex-start; */
+    flex: 1 0 21%; 
+    margin: 0px;
+}
+
+.search{
+    display: flex;
+    justify-content: space-evenly;
     flex-direction: row;
 }
 
-#search{
-    flex-grow: 1;
-}
 
-#season, #category{
-    flex-grow: 2;
+
+@media all and (max-width: 800px){
+    .search{
+        flex-direction: column;
+    }
+    .item{
+        justify-content: center;
+    }
+    #clear{
+        width: 150px;
+        font-size: 15px;
+    }
 }

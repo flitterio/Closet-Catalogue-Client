@@ -3,8 +3,6 @@ import {Link } from 'react-router-dom'
 import ApiContext from '../ApiContext';
 import './MyCloset.css'
 import NewItemButton from '../NewItemButton/NewItemButton';
-//import {getClosetItems} from '../items-helpers';
-import Item from '../Item/Item';
 import TokenService from '../services/token-service';
 import config from '../config';
 import SearchBar from '../SearchBar/SearchBar';
@@ -52,25 +50,17 @@ class MyCloset extends Component {
             
         return(
         <article id="my-closet">
-            <NewItemButton
-                tag={Link}
-                to='/new-item'
-                type='button'
-                className='NewItem_button-container'>
-                    Add Item 
-                </NewItemButton>
-                <SearchBar />
-            {/* <div className='group'>
-                {items.map(item =>
-                    <div className='item' key={item.id}>
-                        <Item 
-                            id={item.id}
-                            image={item.image}
-                            title={item.title}
-                                />
-                            </div>
-                         )}
-                </div> */}
+            <div className='add-item'>
+                <NewItemButton
+                    tag={Link}
+                    to='/new-item'
+                    type='button'
+                    id='buttonstyle'
+                    className='NewItem_button-container'>
+                        ADD ITEM 
+                    </NewItemButton>
+                </div>
+                    <SearchBar />
         </article>
         )
     }

@@ -119,6 +119,7 @@ class NewItem extends Component {
                     New Item
                 </h1>
         <div className="newItem_Form">
+            
             <section >
                 <form action="upload.php" method="post" encType="multipart/form-data" id="register" onSubmit={this.handleSubmit}>
 

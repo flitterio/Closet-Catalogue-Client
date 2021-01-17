@@ -15,7 +15,12 @@ class SearchBar extends React.Component{
     };
 
     clearSearch =(event) => {
-        window.location.href='/my-closet'
+        
+       this.setState({
+            search: '',
+            season: '',
+            category: '',
+       })
     }
     handleWordSearch= (event) =>{
         this.setState({search: event.target.value})
@@ -93,15 +98,17 @@ render(){
     ) 
 
     return(
-    <div className="searchbar">
+    <div className="search">
         <form className='searchbar' >
+            <strong>SEARCH:</strong>
             <input 
                 id="search"
                 type="text" 
-                placeholder="Search"
+                placeholder="Enter Text"
                 value={this.state.search}
                 onChange={this.handleWordSearch}/>
-
+    <br />
+                <strong>SEASON: </strong>(select multiple if desired)
                     <Select  
                         id="season"
                         options={seasons}
@@ -109,10 +116,12 @@ render(){
                         isMulti
                         isClearable/>
 
+    <br /><br />
+           <strong>CATEGORY:</strong>
             <select value={this.state.category}
                 onChange={this.handleCategoryFilter}
                 name="category" id="category" form="category">
-                    <option value='' >Category...</option>
+                    <option value='' >Select...</option>
                     <option value="Top">Tops</option>
                     <option value="Bottom">Bottoms</option>
                     <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
@@ -125,8 +134,8 @@ render(){
                     <option value="Other">Other</option>
 
                 </select>
-
-                <button type='button' id="buttonstyle" name='clear' onClick={this.clearSearch}>Clear Search</button>
+            <br /><br />
+                <button type='button' id="clear" name='clear' onClick={this.clearSearch}>Clear Search</button>
             </form>
             <div className='group'>
                     {searchItems.map(item =>

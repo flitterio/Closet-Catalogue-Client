@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   font-family: 'Roboto';
-  margin: 10px 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .App-header{
   display: flex;
@@ -79,6 +80,9 @@ nav{
 }
 
 @media all and (min-width: 800px){ /*fullscreen design*/
+  .App {
+    margin: 10px 30px;
+  }
   nav{
     font-size: 30px;
 
@@ -92,7 +96,7 @@ nav{
     flex-wrap: wrap;
   }
   .item{
-    flex: 1 0 21%; /* explanation below */
+    flex: 1 0 21%; 
     margin: 0px;
   }
   h1{
@@ -106,8 +110,6 @@ nav{
   p{
     font-size: 20px;
   }
-  #buttonstyle{
 
-  }
 
 }

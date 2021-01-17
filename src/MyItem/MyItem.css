@@ -1,0 +1,75 @@
+.back-button{
+    float: left;
+    margin-bottom: 50px;
+}
+#item-image{
+    width: 200px;
+    height: auto;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+.item-container{
+     margin-top: 30px;
+     margin-bottom: 30px;
+    /* width: 200px;
+    display: flex;
+    flex-direction: column; */ 
+    /* justify-content: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+    flex-direction: column;
+    border: 3px solid #8d6b94;
+    padding-top: 20px;
+
+}
+
+.item-detail{
+    justify-content: center;
+    margin: 0;
+}
+#star{
+    margin-right: 5px;
+    margin-bottom: 0;
+    font-size: 25px;
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.season-item{
+    margin-right: 30px;
+}
+.back-button{
+    padding: 3px !important;
+}
+.edit-item{
+    margin-right: 5px;
+}
+
+#delete{
+    background-color: #252025; 
+    border: none;
+    color:#fff4e9;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    font-family: 'Oswald';
+}
+#delete:hover {
+    background-color: #571212;
+    color: white;
+  }

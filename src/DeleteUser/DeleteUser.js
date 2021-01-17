@@ -48,8 +48,8 @@ class DeleteUser extends Component {
             <h2>Are you sure you want to delete your Profile?</h2>
             <p>Deleting your account is irreversible </p>
             <div className='group'>
-                <input type='button' className='item' value='DELETE USER' onClick={this.handleDeleteUser}/>
-                <input type='button' className='item' value='CANCEL' onClick={this.cancelDelete} />
+                <input type='button'  id='delete' value='DELETE USER' onClick={this.handleDeleteUser}/>
+                <input type='button'  id='clear' value='CANCEL' onClick={this.cancelDelete} />
             </div> 
             </>
 

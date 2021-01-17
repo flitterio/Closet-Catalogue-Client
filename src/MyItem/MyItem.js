@@ -57,25 +57,39 @@ export default class Item extends React.Component{
             <ApiContext.Consumer>
                 {(context) => (
                 <div className='MyItem'>
-                  <Link to={`/my-closet`}>
-                        Back
-                    </Link>
+                  <div className='back-button' id='buttonstyle'>
+                      <Link to={`/my-closet`} id='buttonstyle'>
+                          BACK
+                      </Link>
+                    </div>
                     <br /><br />
-
+              <div className="item-container">
+                <div className='item-detail'>
                     <img src={item.image} alt={item.title} />
-                    <br />
-                    <h3 className='MyItem_title'>
+                    </div>
+                <div className='item-detail'>
+                    <h3 className='title'>
                             {item.title}
-                  <i style={{visibility: item.favorite ? 'visible' : 'hidden'}}>{star}</i>
+                  <i id="star" style={{visibility: item.favorite ? 'visible' : 'hidden'}}>{star}</i>
                     </h3>
-                    <h4>Season(s)</h4>
-                    <h5>{item.season}</h5>
-                    <h4>Category</h4>
-                    <h5>{item.category}</h5>
-                    <Link to={`/edit-item/${itemId}`}>
-                        Edit Item
+                    </div>
+                    <div className='item-detail'>
+                  <div className="details">
+                    <div className="season-item">
+                      <h4>Season(s)</h4>
+                      <h5>{item.season}</h5>
+                    </div>
+                    <div className="category-item">
+                      <h4>Category</h4>
+                      <h5>{item.category}</h5>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                    <Link to={`/edit-item/${itemId}`} id='buttonstyle' className="edit-item">
+                        EDIT ITEM
                     </Link>
-                    <button id="buttonstyle" type='button' onClick={this.handleClickDelete} >Delete Item </button>
+                    <button id="delete" type='button' className="category-item" onClick={this.handleClickDelete} >Delete Item </button>
                 </div>
                 )}
             </ApiContext.Consumer>

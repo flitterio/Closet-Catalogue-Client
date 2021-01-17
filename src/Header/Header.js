@@ -23,7 +23,7 @@ export default class Header extends Component {
           onClick={this.handleLogoutClick}
           to='/' className="link">
           Logout
-        </Link>
+        </Link> |
         {this.props.renderNavRoutes()}
       </div>
     )
