@@ -51,18 +51,11 @@
   .submit {
       margin-top: 30px;
       font-size: 16px;
-    /* background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right; */
   }
 
 
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1100px) { /*smaller screens */
     .col-25, .col-75,  input[type=submit] {
       width: 100%;
       margin-top: 0;

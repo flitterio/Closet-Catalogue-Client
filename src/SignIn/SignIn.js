@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
-import './SignIn.css';
 import {Link} from 'react-router-dom';
 import {Button, Input } from '../Utils/Utils';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

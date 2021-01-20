@@ -10,8 +10,6 @@ import { toast, ToastContainer } from 'react-toastify';
 
 
 class EditUser extends Component {
-    //use example from editbookmark.js in bookmark app
-
     static contextType = ApiContext;
 
     state={
@@ -51,8 +49,8 @@ class EditUser extends Component {
             username: this.state.user.username,
             email: this.state.user.email,
             password: this.state.user.password
-       })
-    })
+            })
+          })
 
 
         .catch(error => {
@@ -60,7 +58,7 @@ class EditUser extends Component {
             this.setState({error})
             })
 
-  }
+      }
 
   deleteWarning = (e) => {
       const current = this.state.deleteWarning;

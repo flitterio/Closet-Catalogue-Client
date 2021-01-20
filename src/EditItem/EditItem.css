@@ -1,5 +1,5 @@
-.Toastify__toast-container {
-    width: 200px;
+.Toastify__toast-container { /*pop up message */
+    width: 200px; 
     color: black;
 }
 

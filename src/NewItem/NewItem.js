@@ -1,5 +1,3 @@
-
-
 import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import PropTypes from 'prop-types';

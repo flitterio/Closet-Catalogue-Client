@@ -76,10 +76,7 @@ export default class Item extends React.Component{
     }
     
     showDeleteWarning = () =>{
-      // const {itemId}= this.props.match.params
        if(this.state.deleteWarning === true){
-      // console.log('item.id', itemId )
-      // return <DeleteItem itemid={itemId}/> 
       return(
         <>
         <h2>Are you sure you want to delete your item?</h2>

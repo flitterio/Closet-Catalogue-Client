@@ -248,9 +248,6 @@ handleDeleteItem = itemId => {
         <header className="App_header">
           <Header className="element" clearItemsArray={this.clearItemsArray}
           renderNavRoutes={this.renderNavRoutes}/>
-          {/* <RenderError>
-            <nav className="App_nav element">{this.renderNavRoutes()}</nav>
-          </RenderError> */}
             <h1>
               <Link to="/" >
                 <img className="logo" src="cc-logo.JPG" alt="Closet Catalogue Logo" />

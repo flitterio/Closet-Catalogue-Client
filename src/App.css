@@ -9,13 +9,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
-/* .App_nav{
-  margin-top: 20px ;
-  display:flex;
-  justify-content: space-evenly;
-  text-align: right;
-  background-color:#e8dbc5 ;
-} */
+
 p{
   font-size: 15px;
 }

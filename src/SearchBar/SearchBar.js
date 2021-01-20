@@ -37,53 +37,6 @@ class SearchBar extends React.Component{
     }
 
 
-    // handleSearch = (event) => {
-    //     event.preventDefault();
-    //     this.setState({searchItems: this.context.items})
-    //     const {searchItems} = this.state
- 
-    //     {let wordSearch= searchItems.filter(
-    //         (item) => {
-    //             return item.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
-    //         }
-    //     ) 
-    //         this.setState({
-    //             searchItems: wordSearch
-    //         })}
-
-    //     if(this.state.season !== '')
-    //     {let seasonFilter = searchItems.filter(
-    //         (item) =>{
-    //             return item.season.toLowerCase().indexOf(this.state.season.toLowerCase()) !== -1;
-    //         }
-    //     )
-    //         this.setState({
-    //             searchItems: seasonFilter
-    //         })}
-
-    //     if(this.state.category !== '')
-    //     {let categoryFilter = searchItems.filter(
-    //         (item) =>{
-    //             return item.season.toLowerCase().indexOf(this.state.season.toLowerCase()) !== -1;
-    //         }
-    //     )
-    //             this.setState({
-    //                 searchItems: categoryFilter
-    //             })}
-
-    //     if(this.state.favorite === true){
-    //         let favoriteFilter = searchItems.filter(
-    //             (item) =>{
-    //                return item.favorite === true
-    //             }
-    //         )
-                    
-    //         this.setState({
-    //             searchItems: favoriteFilter
-    //         })
-    //             } 
-    //     }
-
 
 render(){
     let {items=[]} = this.context;

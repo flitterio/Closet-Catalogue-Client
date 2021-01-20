@@ -1,5 +1,3 @@
-
-
 import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import PropTypes from 'prop-types';
@@ -16,9 +14,6 @@ import './EditItem.css'
 
 class EditItem extends Component {
     static defaultProps ={
-        // history: {
-        //     goBack: ()=> { }
-        // },
         match: {
             params: {}
           }

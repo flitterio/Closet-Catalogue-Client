@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import ApiContext from '../ApiContext';
 import './MyProfile.css';
 import User from '../User/User';
-//import {getUser} from '../user-helpers';
-import EditUser from '../EditUser/EditUser'
 import EditUserButton from '../EditUserButton/EditUserButton';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';

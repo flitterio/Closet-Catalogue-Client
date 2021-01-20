@@ -1,5 +1,4 @@
 import React from 'react'
-import './NewItemButton.css'
 
 export default function NewItemButton(props) {
   const { tag, className, childrenm, ...otherProps } = props

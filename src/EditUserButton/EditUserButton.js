@@ -1,5 +1,4 @@
 import React from 'react'
-import './EditUserButton.css'
 
 export default function EditUserButton(props) {
   const { tag, className, childrenm, ...otherProps } = props
