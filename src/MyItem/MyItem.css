@@ -1,9 +1,17 @@
+.MyItem{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+    justify-content: center;
+}
 .back-button{
     float: left;
-    margin-bottom: 50px;
+    width: 80px;
+    height: 40px;
+    
 }
 #item-image{
-    width: 200px;
+    width: 100px;
     height: auto;
 }
 
@@ -17,14 +25,10 @@
 .item-container{
      margin-top: 30px;
      margin-bottom: 30px;
-    /* width: 200px;
-    display: flex;
-    flex-direction: column; */ 
-    /* justify-content: center; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 200px; */
+
     flex-direction: column;
     border: 3px solid #8d6b94;
     padding-top: 20px;
@@ -35,16 +39,18 @@
     justify-content: center;
     margin: 0;
 }
-#star{
-    margin-right: 5px;
+#star{ 
+    font-size: 20px;
+}
+.fave-title{
+    display: flex;
     margin-bottom: 0;
-    font-size: 25px;
 }
 
 .title{
     text-align: center;
-    font-size: 40px;
-    margin-top: 0;
+    font-size: 25px;
+    /* margin-top: 0; */
 }
 
 .season-item{
@@ -72,4 +78,24 @@
 #delete:hover {
     background-color: #571212;
     color: white;
+  }
+
+  @media all and (min-width: 800px){
+    .back-button{
+        padding-top: 0px;
+        width: 100px;
+        height: 40px;
+        
+    }
+      .MyItem{
+          margin: 0 250px;
+      }
+
+    #item-image{
+        width: 150px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
   }

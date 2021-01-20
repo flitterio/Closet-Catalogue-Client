@@ -17,6 +17,11 @@ export default class SampleItem extends React.Component{
 
     static contextType = ApiContext;
 
+    showFavorite = (favorite) => {
+        if(favorite === true)
+          return  <i id="star">{star}</i>
+      }
+
     render(){
         const {landingitems=[]} = this.context
         const {itemId}= this.props.match.params
@@ -26,21 +31,40 @@ export default class SampleItem extends React.Component{
             <ApiContext.Consumer>
                 {(context) => (
                 <div className='MyItem'>
-                  <Link to={`/`}>
-                        Back
-                    </Link>
-                    <br /><br />
+                  <div >
+                      <Link to={`/my-closet`} className='back-button' id='buttonstyle'>
+                          BACK
+                      </Link>
+                    </div>
+
+              <div className="item-container">
+                <div className='item-detail'>
                     <img src={item.image} alt={item.title} />
-                    <br />
-                    <h3 className='MyItem_title'>
-                            {item.title}
-                  <i style={{visibility: item.favorite ? 'visible' : 'hidden'}}>{star}</i>
+                    </div>
+                <div className='item-detail'>
+                  <div className='fave-title'>
+                    <h3 className='title'>
+                            {item.title} 
                     </h3>
-                    <h4>Season(s)</h4>
-                    <h5>{item.season}</h5>
-                    <h4>Category</h4>
-                    <h5>{item.category}</h5>
+                    <div>
+                      {this.showFavorite(item.favorite)}
+                      </div>
+                    </div>
+                  </div>
+                    <div className='item-detail'>
+                  <div className="details">
+                    <div className="season-item">
+                      <h4>Season(s)</h4>
+                      <h5>{item.season}</h5>
+                    </div>
+                    <div className="category-item">
+                      <h4>Category</h4>
+                      <h5>{item.category}</h5>
+                    </div>
+                  </div>
+                  </div>
                 </div>
+            </div>
                 )}
             </ApiContext.Consumer>
         )

@@ -19,12 +19,12 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className='Header__logged-in' >
+        {this.props.renderNavRoutes()} |
         <Link
           onClick={this.handleLogoutClick}
           to='/' className="link">
-          Logout
-        </Link> |
-        {this.props.renderNavRoutes()}
+          &nbsp;Logout
+        </Link> 
       </div>
     )
   }
@@ -32,15 +32,15 @@ export default class Header extends Component {
   renderLoginLink() {
     return (
       <div className='Header__not-logged-in'>
+       {this.props.renderNavRoutes()} |
         <Link
           to='/register' className="link">
-          Register&nbsp; 
+          &nbsp;Register&nbsp; 
         </Link> |
         <Link
           to='/sign-in' className="link">
            &nbsp;Log in 
-        </Link> |
-        {this.props.renderNavRoutes()}
+        </Link> 
       </div>
     )
   }

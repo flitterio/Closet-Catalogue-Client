@@ -100,6 +100,7 @@ render(){
     return(
     <div className="search">
         <form className='searchbar' >
+        <div className='inner-box'>
             <strong>SEARCH:</strong>
             <input 
                 id="search"
@@ -108,36 +109,43 @@ render(){
                 value={this.state.search}
                 onChange={this.handleWordSearch}/>
     <br />
-                <strong>SEASON: </strong>(select multiple if desired)
-                    <Select  
+            <section className="categories">
+                           <strong>CATEGORY:</strong> 
+
+                        <br />
+                        <select value={this.state.category}
+                        onChange={this.handleCategoryFilter}
+                         name="category" id="category" form="category">
+                            <option value='' >Category...</option>
+                            <option value="Top">Tops</option>
+                            <option value="Bottom">Bottoms</option>
+                            <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
+                            <option value="Outerwear">Outerwear</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Sleepwear">Sleepwear</option>
+                            <option value="Undergarments">Undergarments</option>
+                            <option value="Athletic">Athletic</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+
+                    <br /><br />
+                    </section>
+                        <strong>SEASON: </strong>(select multiple if desired)
+
+                        <Select  
                         id="season"
                         options={seasons}
                         onChange={this.handleSeasonChange}
                         isMulti
                         isClearable/>
 
-    <br /><br />
-           <strong>CATEGORY:</strong>
-            <select value={this.state.category}
-                onChange={this.handleCategoryFilter}
-                name="category" id="category" form="category">
-                    <option value='' >Select...</option>
-                    <option value="Top">Tops</option>
-                    <option value="Bottom">Bottoms</option>
-                    <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
-                    <option value="Outerwear">Outerwear</option>
-                    <option value="Shoes">Shoes</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Sleepwear">Sleepwear</option>
-                    <option value="Undergarments">Undergarments</option>
-                    <option value="Athletic">Athletic</option>
-                    <option value="Other">Other</option>
-
-                </select>
             <br /><br />
                 <button type='button' id="clear" name='clear' onClick={this.clearSearch}>Clear Search</button>
+                </div>
             </form>
-            <div className='group'>
+            <div className='group' id='item-layout'>
                     {searchItems.map(item =>
                         <div className='item' key={item.id}>
                             <Item 

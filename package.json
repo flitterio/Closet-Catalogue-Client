@@ -19,6 +19,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
+    "react-scroll-into-view": "^1.8.2",
     "react-select": "^3.1.1",
     "react-toast-notifications": "^2.4.0",
     "react-toastify": "^6.2.0",

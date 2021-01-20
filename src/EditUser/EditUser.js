@@ -167,7 +167,7 @@ handleClickCancel = () => {
                  
                 </label>
               </div>
-            <div class="col-75">
+            <div className="col-75">
                 <input
                   type='text'
                   name='fname'
@@ -186,7 +186,7 @@ handleClickCancel = () => {
 
                 </label>
               </div>
-              <div class="col-75">
+              <div className="col-75">
                 <input
                   type='text'
                   name='lname'
@@ -199,30 +199,13 @@ handleClickCancel = () => {
               </div>
               <div>
               <div className='col-25'>
-                <label htmlFor='username'>
-                  Edit Username
-                  {' '}
-                </label>
-              </div>
-              <div class="col-75">
-                <input
-                  name='username'
-                  id='username'
-                  placeholder={user.username}
-                  defaultValue={user.username}
-                  onChange={this.handleChangeUsername}
-                />
-              </div>
-              </div>
-              <div>
-              <div className='col-25'>
                 <label htmlFor='email'>
                   Email
                   {' '}
    
                 </label>
               </div>
-              <div class="col-75">
+              <div className="col-75">
                 <input
                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                   name='email'
@@ -235,7 +218,7 @@ handleClickCancel = () => {
               </div>
 
               <div className='EditUser__buttons'>
-                <Link id="clear" to={`/my-profile`}>
+                <Link id="clear" className='cancel-button' to={`/my-profile`}>
                     Cancel
                 </Link>
                 <button id="buttonstyle" type='submit'>

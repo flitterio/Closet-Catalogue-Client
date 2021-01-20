@@ -50,6 +50,7 @@ class MyCloset extends Component {
             
         return(
         <article id="my-closet">
+            <h1>YOUR CLOSET </h1>
             <div className='add-item'>
                 <NewItemButton
                     tag={Link}
