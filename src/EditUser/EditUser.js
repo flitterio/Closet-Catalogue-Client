@@ -74,9 +74,6 @@ class EditUser extends Component {
     this.setState({ lname: e.target.value })
   };
 
-  handleChangeUsername = e => {
-    this.setState({ username: e.target.value })
-  };
 
   handleChangeEmail = e => {
     this.setState({ email: e.target.value })
@@ -85,12 +82,11 @@ class EditUser extends Component {
 
   handleSubmit = (e) => {
       e.preventDefault();
-      const {fname, lname, username, email} = e.target
+      const {fname, lname, email} = e.target
         
       const editUser = {
         fname: fname.value,
         lname: lname.value,
-        username: username.value,
         email: email.value,
 
       }
@@ -98,7 +94,6 @@ class EditUser extends Component {
       editUser.propTypes={
           fname: PropTypes.string,
           lname: PropTypes.string,
-          username: PropTypes.string,
           email: PropTypes.string,
       }
 
