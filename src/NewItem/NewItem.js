@@ -80,7 +80,7 @@ class NewItem extends Component {
            .then(data => {
             toast.dark('Success, New Item Added! Redirecting to My Closet...', {
                 position: "top-right",
-                autoClose: 4000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -89,7 +89,7 @@ class NewItem extends Component {
             });
             setTimeout(()=>{
             this.props.history.push('/my-closet');
-            }, 4000)
+            }, 3000)
            })
           
           .catch(error => {
@@ -113,18 +113,20 @@ class NewItem extends Component {
     render(){
         const { error } =this.state
         return(
-          <div className="NewItem_Form">
+          <div >
               <ToastContainer />
-              <h1>
-                    New Item
+              <h1 className='new-item'>
+                    NEW ITEM 
                 </h1>
-            <section>
+        <div className="newItem_Form">
+            
+            <section >
                 <form action="upload.php" method="post" encType="multipart/form-data" id="register" onSubmit={this.handleSubmit}>
 
             <section className="image">
-                 <img id="image" width="50" height="50" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
+                 <img id="image" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
             <br/>
-                <button onClick={this.showWidget}> Upload Image </button>
+                <button id="buttonstyle" onClick={this.showWidget}> Upload Image </button>
                 <br /><br />
             </section>
 
@@ -171,20 +173,19 @@ class NewItem extends Component {
 
                     <br /><br />
                     </section>
-
-                <input 
+                   <input 
                     name="favorite" 
                     type="checkbox"
+                    id='favorite'
                     checked={this.state.favorite}  
                     onChange={this.handleFavoriteChange} /> Favorite?
-                    
-
                 <br /><br />
-                    <input type="submit" value="Add Item" name="submit" />
+                    <input type="submit"  className='add-button' id='buttonstyle' value="Add Item" name="submit" />
                     <br /><br />
                     
             </form>
             </section>
+            </div>
           </div>
         )
     }

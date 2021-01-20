@@ -1,0 +1,101 @@
+.MyItem{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+    justify-content: center;
+}
+.back-button{
+    float: left;
+    width: 80px;
+    height: 40px;
+    
+}
+#item-image{
+    width: 100px;
+    height: auto;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+.item-container{
+     margin-top: 30px;
+     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    border: 3px solid #8d6b94;
+    padding-top: 20px;
+
+}
+
+.item-detail{
+    justify-content: center;
+    margin: 0;
+}
+#star{ 
+    font-size: 20px;
+}
+.fave-title{
+    display: flex;
+    margin-bottom: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 25px;
+    /* margin-top: 0; */
+}
+
+.season-item{
+    margin-right: 30px;
+}
+.back-button{
+    padding: 3px !important;
+}
+.edit-item{
+    margin-right: 5px;
+}
+
+#delete{
+    background-color: #252025; 
+    border: none;
+    color:#fff4e9;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    font-family: 'Oswald';
+}
+#delete:hover {
+    background-color: #571212;
+    color: white;
+  }
+
+  @media all and (min-width: 800px){
+    .back-button{
+        padding-top: 0px;
+        width: 100px;
+        height: 40px;
+        
+    }
+      .MyItem{
+          margin: 0 250px;
+      }
+
+    #item-image{
+        width: 150px;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+  }

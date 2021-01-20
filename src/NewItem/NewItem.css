@@ -1,0 +1,47 @@
+.newItem_Form{
+    margin: 0 50px;
+}
+.new-item{ /*title*/
+    margin: 0;
+    font-size: 40px;
+}
+label{
+    font-size: 20px;
+}
+#title,  #category{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0 10px !important;
+    height: 40px;
+}
+#favorite{
+    font-size: 40px;
+    /* width: 100%; */
+    /* padding: 0 10px !important; */
+    /* height: 40px; */
+    margin-bottom: 0;
+}
+.add-button{
+    margin-top: 0 !important;
+}
+#season{
+    margin-bottom: -30px;
+}
+
+#category{
+    height: 40px;
+    margin-bottom: -30px;
+}
+
+#image{
+    height: 100px;
+    width: auto;
+    margin-top: 0;
+}
+
+@media all and (min-width: 800px){
+    .newItem_Form{
+        margin: 0 400px;
+    }
+}

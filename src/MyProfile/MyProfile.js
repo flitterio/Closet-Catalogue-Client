@@ -51,8 +51,8 @@ class MyProfile extends Component {
         const { user=[]} = this.state
 
         return(
-        <article id="my profile">
-            <div className='group'>
+        <article id="my-profile">
+            <div className='profile-group'>
                 <User 
                     id={user.id}
                     fname={user.fname}
@@ -65,9 +65,10 @@ class MyProfile extends Component {
                 <EditUserButton
                     tag ={Link}
                     to={`/edit-user`}
+                    id="buttonstyle"
                     type='button'
                     className='EditUser_button-container'>
-                        Edit Profile
+                        EDIT PROFILE
                 </EditUserButton>
             </div>
         </article>

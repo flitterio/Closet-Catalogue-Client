@@ -11,6 +11,7 @@ import {findItem} from '../items-helpers'
 import {Link} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './EditItem.css'
 
 
 class EditItem extends Component {
@@ -108,7 +109,7 @@ componentDidMount(){
            .then(data => {
             toast.dark('Success, Item Edited! Redirecting to My Closet...', {
                 position: "top-right",
-                autoClose: 4000,
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -117,7 +118,7 @@ componentDidMount(){
             });
             setTimeout(()=>{
             this.props.history.push('/my-closet');
-            }, 4000)
+            }, 3000)
            })
           
           .catch(error => {
@@ -204,16 +205,17 @@ componentDidMount(){
         return(
           <div className="EditItem_Form">
               <ToastContainer />
-              <h1>
-                    Edit Item
+              <h1 className='new-item'>
+                    EDIT ITEM
                 </h1>
             <section>
                 <form action="upload.php" method="post" encType="multipart/form-data" id="register" onSubmit={this.handleSubmit}>
 
             <section className="image">
-                 <img id="image" width="50" height="50" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
+                 <img id="image" src={this.state.cloudinary_url} value={this.state.cloudinary_url} alt="preview of image"/>
+                 <br />
 
-                <button onClick={this.showWidget}> Upload New Image </button>
+                <button id="buttonstyle" onClick={this.showWidget}> Upload New Image </button>
                 <br /><br />
             </section>
 
@@ -263,16 +265,19 @@ componentDidMount(){
 
                 <input 
                     name="favorite" 
+                    id='favorite'
                     type="checkbox"
                     checked={this.state.favorite}  
                     onChange={this.handleFavoriteChange} /> Favorite?
                     
 
                 <br /><br />
-                    <input type="submit" value="Update Item" name="submit" />
-                        <Link to={`/item/${itemId}`}>
+                <div className='EditUser__buttons'>
+                        <Link id='clear' className='cancel-button' to={`/item/${itemId}`}>
                             Cancel
                         </Link>
+                    <button id='buttonstyle' className='updatesubmit' type="submit"> UPDATE ITEM </button>
+                </div>
                     <br /><br />
 
             </form>

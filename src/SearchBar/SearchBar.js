@@ -3,6 +3,7 @@ import Item from '../Item/Item';
 import ApiContext from '../ApiContext';
 import Select from 'react-select';
 import{ seasons} from '../options';
+import './SearchBar.css';
 
 class SearchBar extends React.Component{
     static contextType = ApiContext;
@@ -14,7 +15,12 @@ class SearchBar extends React.Component{
     };
 
     clearSearch =(event) => {
-        window.location.href='/my-closet'
+        
+       this.setState({
+            search: '',
+            season: '',
+            category: '',
+       })
     }
     handleWordSearch= (event) =>{
         this.setState({search: event.target.value})
@@ -92,41 +98,54 @@ render(){
     ) 
 
     return(
-    <div className="searchbar">
+    <div className="search">
         <form className='searchbar' >
+        <div className='inner-box'>
+            <strong>SEARCH:</strong>
             <input 
+                id="search"
                 type="text" 
-                placeholder="Search"
+                placeholder="Enter Text"
                 value={this.state.search}
                 onChange={this.handleWordSearch}/>
+    <br />
+            <section className="categories">
+                           <strong>CATEGORY:</strong> 
 
-                    <Select  
+                        <br />
+                        <select value={this.state.category}
+                        onChange={this.handleCategoryFilter}
+                         name="category" id="category" form="category">
+                            <option value='' >Category...</option>
+                            <option value="Top">Tops</option>
+                            <option value="Bottom">Bottoms</option>
+                            <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
+                            <option value="Outerwear">Outerwear</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Sleepwear">Sleepwear</option>
+                            <option value="Undergarments">Undergarments</option>
+                            <option value="Athletic">Athletic</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+
+                    <br /><br />
+                    </section>
+                        <strong>SEASON: </strong>(select multiple if desired)
+
+                        <Select  
                         id="season"
                         options={seasons}
                         onChange={this.handleSeasonChange}
                         isMulti
                         isClearable/>
 
-            <select value={this.state.category}
-                onChange={this.handleCategoryFilter}
-                name="category" id="category" form="category">
-                    <option value='' >Category...</option>
-                    <option value="Top">Tops</option>
-                    <option value="Bottom">Bottoms</option>
-                    <option value="Dress/Romper/Pantsuit/Jumpsuit">Dress/Romper/Pantsuit/Jumpsuit</option>
-                    <option value="Outerwear">Outerwear</option>
-                    <option value="Shoes">Shoes</option>
-                    <option value="Accessories">Accessories</option>
-                    <option value="Sleepwear">Sleepwear</option>
-                    <option value="Undergarments">Undergarments</option>
-                    <option value="Athletic">Athletic</option>
-                    <option value="Other">Other</option>
-
-                </select>
-
-                <button type='button' name='clear' onClick={this.clearSearch}>Clear Search</button>
+            <br /><br />
+                <button type='button' id="clear" name='clear' onClick={this.clearSearch}>Clear Search</button>
+                </div>
             </form>
-            <div className='group'>
+            <div className='group' id='item-layout'>
                     {searchItems.map(item =>
                         <div className='item' key={item.id}>
                             <Item 

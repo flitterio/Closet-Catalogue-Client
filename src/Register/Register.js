@@ -1,8 +1,9 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import {Input, Button} from '../Utils/Utils';
 import AuthApiService from '../services/auth-api-service';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import './Register.css';
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 
@@ -58,62 +59,81 @@ onRegistrationSuccess = () => {
                     New User
                 </h1>
 
-            <section>
-                <form id="register"
+            <section className="container">
+                <form id="register" 
                 onSubmit={this.handleSubmit}
                 >
                     <div role='alert'>
                     {error && <p className='red'>{error}</p>}
                         </div>
+                        
+                <div className='col-25'>
                     <label htmlFor="fname">
-                        First Name 
+                        First Name: 
                     </label>
+                </div>
+                <div class="col-75">
                     <Input 
                         id="fname" 
                         name="fname" 
                         type="text" placeholder="First Name" required />
+                        </div>
                 <br /><br />
+                <div className='col-25'>
                     <label htmlFor="lname">
-                        Last Name 
+                        Last Name: 
                     </label>
+                </div>
+                <div class="col-75">
                     <Input 
                         id="lname" 
                         name="lname" 
                         type="text" placeholder="Last Name" required/>
+                </div>
                 <br /><br />
+                <div className='col-25'>
                     <label htmlFor="email">
-                        Email 
+                        Email:  
                     </label>
+                </div>
+                <div class="col-75">
                     <Input 
                         id="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                </div>
                 <br /><br />
+                <div className='col-25'>
                     <label htmlFor="username">
-                        Username 
+                        Username:  
                     </label>
+                </div>
+                <div class="col-75">
                     <Input 
                         id="username"  name="username" type="text" placeholder="Username" required/> 
+                </div>
                 <br /><br />
+                <div className="pass">
+                <div className='col-25'>
                     <label htmlFor="password">
-                        Password 
+                        Password:  
                     </label>
+                </div>
+
+                <div className="col-70">
                     <Input 
                         type={this.state.passwordShown ? "text" : "password"} 
                         id="password" name="password" 
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" required />
+                  </div>
+                  <div>
                     <i onClick={this.togglePasswordVisiblity}>{eye}</i>{" "}
-
+                </div>
+                </div>
                 <br /><br />
-                {/* <label htmlFor="repassword">
-                        Re-Enter Password 
-                    </label>
-                    <Input 
-                        type="password" id="repassword" name="repassword" 
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Re-Enter Password" 
-                        required />
-                <br /><br /> */}
-                    <Button type="submit">
+                <div className="submit">
+                    <Button id="buttonstyle" className="submit" type="submit">
                         Register
                         </Button>
+                </div>
                 </form>
             </section> 
         </div>

@@ -1,0 +1,13 @@
+.cancel-button{
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+ #fname, #lname, #username, #email {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 20px;
+  }

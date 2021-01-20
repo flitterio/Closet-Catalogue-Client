@@ -1,6 +1,18 @@
 .Toastify__toast-container {
     width: 200px;
-    background-color:#B185A7;
     color: black;
+}
 
+.EditItem_form{
+    margin: 0 50px;
+}
+
+.updatesubmit{
+    margin-right: 15px;
+}
+
+@media all and (min-width: 800px){
+    .EditItem_Form{
+        margin: 0 400px;
+    }
 }

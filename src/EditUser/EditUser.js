@@ -150,23 +150,24 @@ handleClickCancel = () => {
             <section className='EditUser'>
               <ToastContainer />
             <h2>Edit User</h2>
+          <section className="container">
             <form
               className='EditUser__form'
               onSubmit={this.handleSubmit}
             >
-              {/* <div className='EditUser__error' role='alert'>
-                {error && <p>{error.message}</p>}
-              </div> */}
               <div>
                 <input
                   type='hidden'
                   name='id'
                   />
+              <div className='col-25'>
                 <label htmlFor='fname' >
                  Edit First Name
                   {' '}
                  
                 </label>
+              </div>
+            <div className="col-75">
                 <input
                   type='text'
                   name='fname'
@@ -176,12 +177,16 @@ handleClickCancel = () => {
                   onChange={this.handleChangeFname}
                 />
               </div>
+              </div>
               <div>
+              <div className='col-25'>
                 <label htmlFor='lname'>
                  Edit Last Name
                   {' '}
 
                 </label>
+              </div>
+              <div className="col-75">
                 <input
                   type='text'
                   name='lname'
@@ -191,25 +196,16 @@ handleClickCancel = () => {
                   onChange={this.handleChangeLname}
                 />
               </div>
-              <div>
-                <label htmlFor='username'>
-                  Edit Username
-                  {' '}
-                </label>
-                <input
-                  name='username'
-                  id='username'
-                  placeholder={user.username}
-                  defaultValue={user.username}
-                  onChange={this.handleChangeUsername}
-                />
               </div>
               <div>
+              <div className='col-25'>
                 <label htmlFor='email'>
                   Email
                   {' '}
    
                 </label>
+              </div>
+              <div className="col-75">
                 <input
                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                   name='email'
@@ -219,26 +215,27 @@ handleClickCancel = () => {
                   onChange={this.handleChangeEmail}
                 />
               </div>
+              </div>
 
               <div className='EditUser__buttons'>
-                <Link to={`/my-profile`}>
+                <Link id="clear" className='cancel-button' to={`/my-profile`}>
                     Cancel
                 </Link>
-                <button type='submit'>
+                <button id="buttonstyle" type='submit'>
                   Save
                 </button>
               </div>
               <br /> <br />
                      
             <section className="DeleteUser" >
-                <input type='button' value='Delete User' onClick={this.deleteWarning} style={{visibility: !this.state.deleteWarning ? 'visible' : 'hidden'}}/> 
+                <input id="delete" type='button' value='DELETE USER' onClick={this.deleteWarning} style={{visibility: !this.state.deleteWarning ? 'visible' : 'hidden'}}/> 
                   
                   {this.state.deleteWarning ? <DeleteUser user={this.state.user} /> : null}
 
               </section>
             </form>
           </section>
-
+        </section>
         )
     }
 

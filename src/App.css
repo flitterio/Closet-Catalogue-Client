@@ -1,38 +1,115 @@
 .App {
   text-align: center;
+  font-family: 'Roboto';
+  margin-left: auto;
+  margin-right: auto;
+}
+.App-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* .App_nav{
+  margin-top: 20px ;
+  display:flex;
+  justify-content: space-evenly;
+  text-align: right;
+  background-color:#e8dbc5 ;
+} */
+p{
+  font-size: 15px;
+}
+form, input, select, p, h5{
+  font-family: 'Roboto';
+}
+h1, h2, h3, h4{
+  font-family: 'Oswald';
+}
+h1{
+  font-weight: 200;
+  font-size: 35px;
+}
+h2{
+  font-weight: 400;
+  font-size: 25px;
+}
+h3, button{
+  font-weight: 400;
+  text-transform: uppercase;
+}
+nav{
+  text-transform: uppercase;
+  margin-top: 20px ;
+  font-size: 25px;
+  display:flex;
+  justify-content: space-evenly;
+  background-color:#c3a29e ;
+  text-decoration: none;
+  font-family: 'Oswald';
+  font-weight: 200;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Link{
+  text-decoration: none;
+}
+#buttonstyle {
+  background-color: #8d6b94; 
+  border: none;
+  color:#fff4e9;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  font-family: 'Oswald';
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#buttonstyle:hover {
+  background-color: #32202D;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo{
+  width: 100px;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media all and (min-width: 800px){ /*fullscreen design*/
+  .App {
+    margin: 10px 30px;
   }
-  to {
-    transform: rotate(360deg);
+  nav{
+    font-size: 30px;
+
   }
+  .logo{
+  width: 140px;
+}
+  .group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .item{
+    flex: 1 0 21%; 
+    margin: 0px;
+  }
+  h1{
+    font-weight: 200;
+    font-size: 45px;
+  }
+  h2{
+    font-weight: 400;
+    font-size: 35px;
+  }
+  p{
+    font-size: 20px;
+  }
+
+
 }

@@ -1,0 +1,40 @@
+/* i {
+    float: left;
+    margin-top: 100px;
+    margin-left: 20px;
+    width: 10%;
+} */
+
+/* .signin-container{
+    border-radius: 5px;
+    background-color: #c3a29e;
+    padding: 20px;
+    margin: 0 75px;
+}
+.user-signin{
+    float: left;
+    width: 100%;
+    margin-top: 0px;
+}
+.password-signin{
+    float: left;
+    width: 80%;
+    margin-top: 0px;
+}
+
+@media screen and (min-width: 800px) {
+
+    .signin-container{
+        margin: 0 250px;
+    }
+
+    .user-signin{
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    .password-signin{
+        widows: 60%;
+        margin-top: 6px;
+    }
+} */
