@@ -10,7 +10,6 @@ static contextType = ApiContext;
 
 render(){
 const {landingitems=[]} = this.context
-console.log('landing items', this.context.landingitems)
     return(
     <div className="landingpage_content">
          <section>
