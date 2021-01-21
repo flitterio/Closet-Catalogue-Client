@@ -34,5 +34,7 @@ Check out and edit your Profile
 ![Profile](/images/profile.PNG)
 
 ## Code Used
+
 Front End: React, CSS
+
 Back End: Node JS
