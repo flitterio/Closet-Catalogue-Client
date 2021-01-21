@@ -1,6 +1,4 @@
-# Closet Catalogue 
-![Logo](/images/cc-logo.PNG)
-
+# Closet Catalogue
 Browse your closet like an online store!
 
 Link to live app: https://closet-catalogue.vercel.app/
