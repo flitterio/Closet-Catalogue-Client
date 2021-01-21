@@ -1,7 +1,10 @@
-# Closet Catalogue
+# Closet Catalogue 
+![Logo](/images/cc-logo.PNG)
 
 Browse your closet like an online store!
+
 Link to live app: https://closet-catalogue.vercel.app/
+
 Link to Api Repo: https://github.com/flitterio/Closet-Catalogue-Server
 
 ## How It Works
@@ -10,27 +13,27 @@ Closet Catalogue allows users to create an online catalogue with items they have
 ### Screenshots
 Landing Page
 
-![Landing Page](/images/logo.png)
+![Landing Page](/images/landingpage.PNG)
 
 Register For Your Account
 
-![Register](/images/logo.png)
+![Register](/images/Register.PNG)
 
 Login
 
-![Login](/images/logo.png)
+![Login](/images/login.PNG)
 
 View And Search Your Closet
 
-![Your Closet](/images/logo.png)
+![Your Closet](/images/yourcloset.PNG)
 
 Look at your Item
 
-![Item](/images/logo.png)
+![Item](/images/myitem.PNG)
 
 Check out and edit your Profile
 
-![Profile](/images/logo.png)
+![Profile](/images/profile.PNG)
 
 ## Code Used
 Front End: React, CSS
