@@ -3,7 +3,7 @@ Browse your closet like an online store!
 
 Link to live app: https://closet-catalogue.vercel.app/
 
-Link to Api Repo: https://github.com/flitterio/Closet-Catalogue-Server
+Link to API Repo: https://github.com/flitterio/Closet-Catalogue-Server
 
 ## How It Works
 Closet Catalogue allows users to create an online catalogue with items they have. Create a free account to upload items to your closet. Browse your items and filter them by key words, season and category.
